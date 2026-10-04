@@ -24,3 +24,7 @@ Para aparecer de verdad: llena `data/business.json`, crea/verifica tu **Perfil d
 
 ## Seguridad
 El PIN de `/staff/` (constante `CONFIG` en `staff/app.js`) es solo una barrera ligera en el navegador. Serie, motor y ubicación están en `data/inventory.json`, que es público. Para protegerlos de verdad, moverlos tras una Netlify Function.
+
+## Fotos: dos opciones
+- **Simple (recomendada para empezar):** guarda `photos/<slug>.jpg` en el repo; Netlify las sirve desde su CDN.
+- **ImageKit (u otro CDN):** sube las fotos allá y pega las URLs en `data/models.json`, p. ej. `"avanzada-q6-110cr": {"photos": ["https://ik.imagekit.io/tu_id/q6.jpg"]}`. Con ImageKit el sitio pide automáticamente versiones reducidas y en WebP. Después corre `python3 scripts/build_site.py`.

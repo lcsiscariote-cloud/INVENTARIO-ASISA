@@ -38,7 +38,7 @@ for m in DB["models"]:
     prices = [u["price"] for u in us if u["price"]]
     cat = art.categorize(m["brand"], m["name"])
     photos = sorted(glob.glob(P("photos", m["slug"] + ".*")) + glob.glob(P("photos", m["slug"] + "-*.*")))
-    photos = [os.path.basename(x) for x in photos if not x.endswith(".gitkeep")] + [os.path.basename(p) for p in MODELS.get(m["slug"], {}).get("photos", [])]
+    photos = [os.path.basename(x) for x in photos if not x.endswith(".gitkeep")] + list(MODELS.get(m["slug"], {}).get("photos", []))
     opts = {}
     for u in us: opts.setdefault((u["color"], u["year"], u["price"]), []).append(u["id"])
     ms.append(dict(m, title=nice(m["name"]), cat=cat, pmin=min(prices) if prices else None, pmax=max(prices) if prices else None,
@@ -70,8 +70,14 @@ def term_bar():
     pts = "".join(f'<li style="left:{(t-T0)/(T1-T0)*100:.0f}%"><i></i><b>{t}</b><span>meses</span></li>' for t in sorted({T0, 12, 18, T1}) if T0 <= t <= T1)
     return f'<div class="terms" aria-label="Plazos de {T0} a {T1} meses"><div class="track"></div><ul>{pts}</ul></div>'
 
+def purl(p, w=None):
+    """URL de foto: archivo local (photos/) o URL externa (p. ej. ImageKit, con redimensionado y WebP automáticos)."""
+    if p.startswith("http"):
+        return p + (("&" if "?" in p else "?") + f"tr=w-{w},f-auto,q-80") if w and "imagekit.io" in p else p
+    return "/photos/" + os.path.basename(p)
+
 def visual(m, cls="art"):
-    if m["photos"]: return f'<img class="photo" src="/photos/{E(m["photos"][0])}" alt="{E(m["brand"]+" "+m["title"])} en {E(CITY)}" loading="lazy">'
+    if m["photos"]: return f'<img class="photo" src="{E(purl(m["photos"][0], 600))}" alt="{E(m["brand"]+" "+m["title"])} en {E(CITY)}" loading="lazy">'
     return art.svg(m["cat"], hexof(m["colors"][0] if m["colors"] else ""), cls)
 
 def head(title, desc, path, extra="", og=True, robots="index,follow"):
@@ -186,7 +192,7 @@ def model_page(m):
     first = next(iter(m["opts"]))
     specs = {"Marca": m["brand"].title(), "Tipo": CAT_SING[m["cat"]], "Colores": ", ".join(c.title() for c in m["colors"]) or "Consultar", "Año modelo": ", ".join(map(str, m["years"])) or "Consultar", **m["info"].get("specs", {})}
     desc_txt = m["info"].get("description") or f'{name} es {("una " if m["cat"] in ("motocicleta","deportiva","motoneta","cuatrimoto") else "un ")}{CAT_SING[m["cat"]].lower()} disponible en {NAME}, {CITY}'.rstrip(".") + "." + (f' Colores: {", ".join(c.lower() for c in m["colors"])}.' if m["colors"] else "") + (f' Precio desde {money(m["pmin"])}.' if m["pmin"] else "")
-    gallery = f'<div class="stage big" id="stage" data-cat="{m["cat"]}">{visual(m, "art")}</div>' + ("".join(f'<img class="th" src="/photos/{E(p)}" alt="" loading="lazy">' for p in m["photos"][1:]))
+    gallery = f'<div class="stage big" id="stage" data-cat="{m["cat"]}">{visual(m, "art")}</div>' + ("".join(f'<img class="th" src="{E(purl(p, 200))}" alt="" loading="lazy">' for p in m["photos"][1:]))
     related = [r for r in ms if r["cat"] == m["cat"] and r["slug"] != m["slug"]][:4] or [r for r in ms if r["slug"] != m["slug"]][:4]
     price = f'<span id="price">{money(first[2])}</span>' if first[2] else '<span id="price">Consultar precio</span>'
     ctas = (f'<a class="btn btn-red" href="{E(wa(f"Hola, me interesa la {name}"))}" rel="noopener">Cotizar por WhatsApp</a>' if wa() else f'<a class="btn btn-red" href="{E(MAPS)}" target="_blank" rel="noopener">Cómo llegar a la tienda</a>') + (f'<a class="btn btn-light" href="{E(m["url"])}" target="_blank" rel="noopener nofollow">Sitio del fabricante</a>' if m.get("url") else "")
@@ -201,7 +207,7 @@ def model_page(m):
 <section class="sec"><div class="sh"><h2>También te puede interesar</h2></div><div class="grid">{"".join(card(r) for r in related)}</div></section></div></main>'''
     prod = {"@context": "https://schema.org", "@type": "Product", "name": name, "brand": {"@type": "Brand", "name": m["brand"].title()}, "category": CAT_SING[m["cat"]], "description": desc_txt,
         "url": f'{SITE}/moto/{m["slug"]}/', **({"color": ", ".join(m["colors"])} if m["colors"] else {}),
-        **({"image": [f'{SITE}/photos/{p}' for p in m["photos"]]} if m["photos"] else {"image": SITE + "/og.png"}),
+        **({"image": [p if p.startswith("http") else f'{SITE}{purl(p)}' for p in m["photos"]]} if m["photos"] else {"image": SITE + "/og.png"}),
         **({"offers": {"@type": "AggregateOffer", "priceCurrency": "MXN", "lowPrice": m["pmin"], "highPrice": m["pmax"], "offerCount": len(m["opts"]), "availability": "https://schema.org/InStock",
             "seller": {"@id": SITE + "/#dealer"}}} if m["pmin"] else {})}
     bc = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate([("Inicio", SITE + "/"), (art.NAMES[m["cat"]], f'{SITE}/categoria/{CAT_SLUG[m["cat"]]}/'), (name, f'{SITE}/moto/{m["slug"]}/')])]}
