@@ -52,6 +52,7 @@ def wa(text=""):
     return f"https://wa.me/{n}?text=" + re.sub(r"\s", "%20", text) if n else ""
 MAPS = B.get("mapsUrl") or "https://www.google.com/maps/search/?api=1&query=" + re.sub(r"\s", "+", f'{NAME} {B["city"]} {B["region"]}')
 
+TEL = re.sub(r"[^\d+]", "", B.get("phone", ""))
 FIN = B.get("financiers", []); T0, T1 = B.get("termMin", 6), B.get("termMax", 24)
 FIN_TXT = " y ".join([", ".join(FIN[:-1]), FIN[-1]]) if len(FIN) > 1 else (FIN[0] if FIN else "")
 FIN_DISC = "Sujeto a análisis y aprobación de la financiera. El monto autorizado depende de tu historial crediticio. " + (FIN_TXT + " son empresas independientes de " + NAME + "." if FIN else "")
@@ -61,6 +62,8 @@ IC = {"wrench": '<path d="M14.7 6.3a4 4 0 0 0-5 5L3 18l3 3 6.7-6.7a4 4 0 0 0 5-5
       "card": '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/>',
       "qr": '<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v7M14 20h3"/>',
       "pin": '<path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+      "phone": '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+      "chat": '<path d="M4 5h16v11H9l-5 4z"/>',
       "moto": '<circle cx="5.5" cy="16" r="3.5"/><circle cx="18.5" cy="16" r="3.5"/><path d="M5.5 16 9 9h5l4.5 7M14 9l-1-3h-3"/>'}
 icon = lambda n: f'<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{IC[n]}</svg>'
 SERV = [("wrench", "Reparación de motos", "Diagnóstico y reparación de motocicletas, motonetas y cuatrimotos en nuestro taller."),
@@ -100,15 +103,19 @@ def header():
     return f'''<a class="skip" href="#main">Saltar al contenido</a>
 <header class="top"><div class="wrap bar"><a href="/" class="logo" aria-label="{E(NAME)} - Inicio"><img src="/logo.svg" alt="{E(NAME)}" width="150" height="38"></a>
 <nav aria-label="Principal"><a href="/#catalogo">Catálogo</a><a href="/financiamiento/">Financiamiento</a><a href="/servicios/">Taller y refacciones</a><a href="/#visitanos">Ubicación</a></nav>{cta}</div></header>'''
+def dock():
+    items = [(f'<a href="tel:{TEL}">{icon("phone")}Llamar</a>' if B.get("phone") else ""), (f'<a class="wa" href="{E(wa("Hola, quiero información de una moto"))}" rel="noopener">{icon("chat")}WhatsApp</a>' if wa() else ""), f'<a href="{E(MAPS)}" target="_blank" rel="noopener">{icon("pin")}Cómo llegar</a>']
+    return '<nav class="dock" aria-label="Contacto rápido">' + "".join(items) + "</nav>"
+
 def footer():
-    contact = "".join(f"<li>{x}</li>" for x in [E(B["address"]) if B["address"] else "", f'<a href="tel:{E(B["phone"])}">{E(B["phone"])}</a>' if B["phone"] else "", E(B["hours"]) if B["hours"] else ""] if x)
+    contact = "".join(f"<li>{x}</li>" for x in [E(B["address"]) if B["address"] else "", f'<a href="tel:{TEL}">{E(B["phone"])}</a>' if B["phone"] else "", E(B["hours"]) if B["hours"] else ""] if x)
     return f'''<footer class="foot"><div class="wrap fgrid"><div><img src="/logo.svg" alt="{E(NAME)}" width="150" height="38" class="flogo"><p>{E(NAME)} · Motos, cuatrimotos y motonetas en {E(CITY)}</p></div>
 <div><h4>Categorías</h4><ul>{"".join(f'<li><a href="/categoria/{CAT_SLUG[c]}/">{E(art.NAMES[c])}</a></li>' for c in CATS)}</ul></div>
 <div><h4>Servicios</h4><ul><li><a href="/financiamiento/">Financiamiento</a></li><li><a href="/servicios/">Reparación de motos</a></li><li><a href="/servicios/#refacciones">Refacciones</a></li><li><a href="/servicios/#aseguradoras">Aseguradoras</a></li></ul></div>
 <div><h4>Marcas</h4><ul>{"".join(f'<li><a href="/#catalogo" data-brand="{E(b)}">{E(b.title())}</a></li>' for b in BRANDS)}</ul></div>
 <div><h4>Contacto</h4><ul>{contact}<li><a href="{E(MAPS)}" target="_blank" rel="noopener">Cómo llegar</a></li></ul></div></div>
 <p class="legal wrap">Los modelos mostrados corresponden al inventario actual y pueden variar. Precios en MXN sujetos a cambio sin previo aviso. Imágenes ilustrativas.</p></footer>
-<script src="/js/site.js" defer></script></body></html>'''
+{dock()}<script src="/js/site.js" defer></script></body></html>'''
 
 def card(m):
     pr = f'<div class="price"><small>Desde</small> {money(m["pmin"])}</div>' if m["pmin"] else '<div class="price ask">Consultar precio</div>'
@@ -171,13 +178,13 @@ def home():
 {serv}<section class="wrap sec" id="preguntas"><div class="sh"><p class="kicker">Preguntas frecuentes</p><h2>Lo que más nos preguntan</h2></div>
 <div class="faq">{"".join(f"<details><summary>{E(q)}</summary><p>{E(a)}</p></details>" for q, a in faq)}</div></section>
 <section class="band dark" id="visitanos"><div class="wrap loc"><div><p class="kicker light">Visítanos</p><h2>{E(NAME)} en {E(CITY)}</h2>
-<p>{E(B["address"]) if B["address"] else "Ven a conocer las unidades en piso y resuelve tus dudas con nuestro equipo."}</p>{f'<p><b>Horario:</b> {E(B["hours"])}</p>' if B["hours"] else ""}{f'<p><b>Teléfono:</b> <a href="tel:{E(B["phone"])}">{E(B["phone"])}</a></p>' if B["phone"] else ""}</div>
-<div class="ctas"><a class="btn btn-red" href="{E(MAPS)}" target="_blank" rel="noopener">Cómo llegar</a>{f'<a class="btn btn-light" href="{E(wa("Hola, quiero información"))}" rel="noopener">Escribir por WhatsApp</a>' if wa() else ""}</div></div></section></main>'''
+<p>{E(B["address"]) if B["address"] else "Ven a conocer las unidades en piso y resuelve tus dudas con nuestro equipo."}</p>{f'<p><b>Horario:</b> {E(B["hours"])}</p>' if B["hours"] else ""}{f'<p><b>Teléfono:</b> <a href="tel:{TEL}">{E(B["phone"])}</a></p>' if B["phone"] else ""}</div>
+<div class="ctas">{f'<a class="btn btn-light" href="tel:{TEL}">Llamar</a>' if B["phone"] else ""}<a class="btn btn-red" href="{E(MAPS)}" target="_blank" rel="noopener">Cómo llegar</a>{f'<a class="btn btn-light" href="{E(wa("Hola, quiero información"))}" rel="noopener">Escribir por WhatsApp</a>' if wa() else ""}</div></div></section></main>'''
     dealer = {"@context": "https://schema.org", "@type": "MotorcycleDealer", "@id": SITE + "/#dealer", "name": NAME, "url": SITE + "/", "logo": SITE + "/logo.svg", "image": SITE + "/og.png",
         "description": f"Venta de motos, cuatrimotos, motonetas y vehículos eléctricos en {CITY}",
-        "address": {"@type": "PostalAddress", "addressLocality": B["city"], "addressRegion": B["region"], "addressCountry": B["country"], **({"streetAddress": B["address"]} if B["address"] else {})},
+        "address": {"@type": "PostalAddress", "addressLocality": B["city"], "addressRegion": B["region"], "addressCountry": B["country"], **({"streetAddress": B.get("streetAddress") or B["address"]} if B["address"] else {}), **({"postalCode": B["postalCode"]} if B.get("postalCode") else {})},
         "areaServed": [{"@type": "City", "name": B["city"]}], "brand": [{"@type": "Brand", "name": b.title()} for b in BRANDS],
-        **({"telephone": B["phone"]} if B["phone"] else {}), **({"openingHours": B["hours"]} if B["hours"] else {}), "hasMap": MAPS,
+        **({"telephone": TEL} if B["phone"] else {}), **({"openingHours": B["hours"]} if B["hours"] else {}), "hasMap": MAPS,
         "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Servicios", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": n, "areaServed": B["city"]}} for n in ["Reparación de motocicletas", "Venta de refacciones para motocicletas", "Reparación y refacciones para aseguradoras"] + ([f"Financiamiento de motocicletas con {FIN_TXT}"] if FIN else [])]}}
     items = {"@context": "https://schema.org", "@type": "ItemList", "name": f"Catálogo de motos {NAME}", "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f'{SITE}/moto/{m["slug"]}/', "name": f'{m["brand"].title()} {m["title"]}'} for i, m in enumerate(ms)]}
     fq = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}

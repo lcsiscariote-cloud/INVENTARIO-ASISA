@@ -4,16 +4,18 @@
   "region": "Guanajuato",
   "country": "MX",
   "siteUrl": "https://inventario-asisa-motos.netlify.app",
-  "address": "",
-  "phone": "",
-  "whatsapp": "",
+  "address": "C. 16 de Septiembre 631, Obregón, 37320 León de los Aldama, Gto.",
+  "phone": "+52 477 122 3217",
+  "whatsapp": "524771223217",
   "hours": "",
   "email": "",
-  "mapsUrl": "",
+  "mapsUrl": "https://maps.app.goo.gl/StTdj1tTrq528moN9",
   "financiers": [
     "Atrato",
     "Mexicash"
   ],
   "termMin": 6,
-  "termMax": 24
+  "termMax": 24,
+  "streetAddress": "C. 16 de Septiembre 631, Obregón",
+  "postalCode": "37320"
 }
