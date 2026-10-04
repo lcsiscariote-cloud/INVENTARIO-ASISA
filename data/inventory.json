@@ -1,0 +1,1422 @@
+{
+ "models": [
+  {
+   "slug": "avanzada-nitrox-go-kart",
+   "brand": "AVANZADA",
+   "name": "NITROX GO KART",
+   "url": "https://motoavanzada.mx/nitro-100/"
+  },
+  {
+   "slug": "avanzada-q6-110cr",
+   "brand": "AVANZADA",
+   "name": "Q6*110CR",
+   "url": "https://motoavanzada.mx/Q6/"
+  },
+  {
+   "slug": "avanzada-q6-110lp-ne-leopard",
+   "brand": "AVANZADA",
+   "name": "Q6*110LP-NE LEOPARD",
+   "url": "https://motoavanzada.mx/Q6leopard/"
+  },
+  {
+   "slug": "avanzada-q6-110lp-ro-leopard",
+   "brand": "AVANZADA",
+   "name": "Q6*110LP-RO LEOPARD",
+   "url": "https://motoavanzada.mx/Q6leopard/"
+  },
+  {
+   "slug": "fuxin-fxatv110ccsf",
+   "brand": "FUXIN",
+   "name": "FXATV110CCSF",
+   "url": null
+  },
+  {
+   "slug": "avanzada-q7-125-raptor",
+   "brand": "AVANZADA",
+   "name": "Q7*125 RAPTOR",
+   "url": "https://motoavanzada.mx/Q7raptor/"
+  },
+  {
+   "slug": "avanzada-q8-150rp-ne",
+   "brand": "AVANZADA",
+   "name": "Q8*150RP-NE",
+   "url": null
+  },
+  {
+   "slug": "avanzada-triciclo-electrico",
+   "brand": "AVANZADA",
+   "name": "TRICICLO ELECTRICO",
+   "url": "https://motoavanzada.mx/ecorider-x3/"
+  },
+  {
+   "slug": "tank-tk150-7-hurricane-150-cc",
+   "brand": "TANK",
+   "name": "TK150-7 HURRICANE 150 CC",
+   "url": null
+  },
+  {
+   "slug": "lifan-lf150t-15-tb150",
+   "brand": "LIFAN",
+   "name": "LF150T-15(TB150)",
+   "url": null
+  },
+  {
+   "slug": "treck-krathos-250",
+   "brand": "TRECK",
+   "name": "KRATHOS 250",
+   "url": "https://treckmotors.com.mx/chopper/krathos250/"
+  },
+  {
+   "slug": "avanzada-cross-pro308-300",
+   "brand": "AVANZADA",
+   "name": "CROSS PRO308 300",
+   "url": "https://motoavanzada.mx/crosstar-pro-308/"
+  },
+  {
+   "slug": "avanzada-r8-mini-pista",
+   "brand": "AVANZADA",
+   "name": "R8 MINI PISTA",
+   "url": null
+  },
+  {
+   "slug": "treck-pocket",
+   "brand": "TRECK",
+   "name": "POCKET",
+   "url": null
+  },
+  {
+   "slug": "avanzada-minicross",
+   "brand": "AVANZADA",
+   "name": "MINICROSS",
+   "url": null
+  },
+  {
+   "slug": "avanzada-crosstar",
+   "brand": "AVANZADA",
+   "name": "CROSSTAR",
+   "url": "https://motoavanzada.mx/crossuper-110c/"
+  },
+  {
+   "slug": "avanzada-q5-50",
+   "brand": "AVANZADA",
+   "name": "Q5*50",
+   "url": null
+  },
+  {
+   "slug": "avanzada-q5-50-raptor",
+   "brand": "AVANZADA",
+   "name": "Q5*50 RAPTOR",
+   "url": null
+  },
+  {
+   "slug": "avanzada-a6-180-motocicleta-deportiva",
+   "brand": "AVANZADA",
+   "name": "A6*180 MOTOCICLETA DEPORTIVA",
+   "url": null
+  },
+  {
+   "slug": "avanzada-a5-180-motoneta",
+   "brand": "AVANZADA",
+   "name": "A5*180 MOTONETA",
+   "url": null
+  },
+  {
+   "slug": "avanzada-ninja-160",
+   "brand": "AVANZADA",
+   "name": "NINJA 160",
+   "url": null
+  },
+  {
+   "slug": "lifan-lifan-110cc-tp",
+   "brand": "LIFAN",
+   "name": "LIFAN 110CC TP",
+   "url": null
+  },
+  {
+   "slug": "treck-element",
+   "brand": "TRECK",
+   "name": "ELEMENT",
+   "url": null
+  },
+  {
+   "slug": "lifan-lf-125-ar125",
+   "brand": "LIFAN",
+   "name": "LF 125(AR125)",
+   "url": null
+  },
+  {
+   "slug": "lifan-lf-150-kp-naranaja",
+   "brand": "LIFAN",
+   "name": "LF 150 KP NARANAJA",
+   "url": null
+  },
+  {
+   "slug": "lifan-158mj-g1001863",
+   "brand": "LIFAN",
+   "name": "158MJ-G1001863",
+   "url": null
+  },
+  {
+   "slug": "lifan-lf200-fr200",
+   "brand": "LIFAN",
+   "name": "LF200(FR200)",
+   "url": null
+  },
+  {
+   "slug": "treck-trazo-racer",
+   "brand": "TRECK",
+   "name": "TRAZO RACER",
+   "url": null
+  },
+  {
+   "slug": "avanzada-m200-bl-arise",
+   "brand": "AVANZADA",
+   "name": "M200-BL ARISE",
+   "url": null
+  },
+  {
+   "slug": "avanzada-m200-ro-arise",
+   "brand": "AVANZADA",
+   "name": "M200-RO ARISE",
+   "url": null
+  },
+  {
+   "slug": "avanzada-m200-az-arise",
+   "brand": "AVANZADA",
+   "name": "M200-AZ ARISE",
+   "url": null
+  },
+  {
+   "slug": "avanzada-q9-200-raptor",
+   "brand": "AVANZADA",
+   "name": "Q9*200 RAPTOR",
+   "url": "https://motoavanzada.mx/hunter200/"
+  },
+  {
+   "slug": "avanzada-q9-200pk-rl",
+   "brand": "AVANZADA",
+   "name": "Q9*200PK-RL",
+   "url": "https://motoavanzada.mx/raptor200/"
+  },
+  {
+   "slug": "avanzada-q9-amazer-rinalum",
+   "brand": "AVANZADA",
+   "name": "Q9*AMAZER RINALUM",
+   "url": "https://motoavanzada.mx/amazer-200cc/"
+  },
+  {
+   "slug": "avanzada-q9-200-amazer",
+   "brand": "AVANZADA",
+   "name": "Q9*200 AMAZER",
+   "url": "https://motoavanzada.mx/amazer-200cc/"
+  },
+  {
+   "slug": "avanzada-q9-200-hunter",
+   "brand": "AVANZADA",
+   "name": "Q9*200 HUNTER",
+   "url": "https://motoavanzada.mx/hunter200/"
+  },
+  {
+   "slug": "avanzada-q9-amazer",
+   "brand": "AVANZADA",
+   "name": "Q9*AMAZER",
+   "url": "https://motoavanzada.mx/amazer-200cc/"
+  },
+  {
+   "slug": "avanzada-atv-prolander-4x4",
+   "brand": "AVANZADA",
+   "name": "ATV PROLANDER 4X4",
+   "url": null
+  },
+  {
+   "slug": "avanzada-2022-cuatrimoto-atv400ro",
+   "brand": "AVANZADA",
+   "name": "2022 CUATRIMOTO ATV400RO",
+   "url": null
+  },
+  {
+   "slug": "avanzada-2021-amarok-300-atv300am",
+   "brand": "AVANZADA",
+   "name": "2021 AMAROK 300 ATV300AM",
+   "url": null
+  },
+  {
+   "slug": "avanzada-atv250ak-amarok",
+   "brand": "AVANZADA",
+   "name": "ATV250AK AMAROK",
+   "url": "https://motoavanzada.mx/amarok-250/"
+  },
+  {
+   "slug": "avanzada-amax250ro",
+   "brand": "AVANZADA",
+   "name": "AMAX250RO",
+   "url": "https://motoavanzada.mx/amax-250cc/"
+  },
+  {
+   "slug": "avanzada-utv-alfa",
+   "brand": "AVANZADA",
+   "name": "UTV ALFA",
+   "url": "https://motoavanzada.mx/alpha200/"
+  },
+  {
+   "slug": "dazon-dz200q1",
+   "brand": "DAZON",
+   "name": "DZ200Q1",
+   "url": "https://dazon.mx/shop/todos-los-productos/motocarros/motocarritos/motocarro-200cc/"
+  },
+  {
+   "slug": "treck-rampante-250",
+   "brand": "TRECK",
+   "name": "RAMPANTE 250",
+   "url": "https://treckmotors.com.mx/vehiculo-comercial/rampante-250/"
+  },
+  {
+   "slug": "piaggio-ape-dx400",
+   "brand": "PIAGGIO",
+   "name": "APE DX400",
+   "url": null
+  },
+  {
+   "slug": "avanzada-cargo-268",
+   "brand": "AVANZADA",
+   "name": "CARGO 268",
+   "url": "https://motoavanzada.mx/cargo-268/"
+  },
+  {
+   "slug": "avanzada-zs167fmmt3901621",
+   "brand": "AVANZADA",
+   "name": "ZS167FMMT3901621",
+   "url": null
+  },
+  {
+   "slug": "avanzada-2021-cuatrimoto-t-archon-4x4-400cc",
+   "brand": "AVANZADA",
+   "name": "2021 CUATRIMOTO T-ARCHON 4X4 400CC",
+   "url": "https://motoavanzada.mx/t-archon-400cc/"
+  },
+  {
+   "slug": "avanzada-q9-200-ninja",
+   "brand": "AVANZADA",
+   "name": "Q9*200 NINJA",
+   "url": null
+  },
+  {
+   "slug": "avanzada-q9-200-apex",
+   "brand": "AVANZADA",
+   "name": "Q9*200 APEX",
+   "url": null
+  },
+  {
+   "slug": "treck-scala-125cc",
+   "brand": "TRECK",
+   "name": "SCALA 125CC",
+   "url": null
+  },
+  {
+   "slug": "dazon-motocarro",
+   "brand": "DAZON",
+   "name": "MOTOCARRO",
+   "url": null
+  },
+  {
+   "slug": "avanzada-bicicleta-electrica",
+   "brand": "AVANZADA",
+   "name": "BICICLETA ELECTRICA",
+   "url": null
+  },
+  {
+   "slug": "avanzada-lf150-10b-kp",
+   "brand": "AVANZADA",
+   "name": "LF150-10B(KP)",
+   "url": null
+  },
+  {
+   "slug": "treck-krathos-treck",
+   "brand": "TRECK",
+   "name": "KRATHOS TRECK",
+   "url": null
+  },
+  {
+   "slug": "avanzada-cross-pro308",
+   "brand": "AVANZADA",
+   "name": "CROSS PRO308",
+   "url": null
+  },
+  {
+   "slug": "treck-warrior-200",
+   "brand": "TRECK",
+   "name": "WARRIOR 200",
+   "url": null
+  },
+  {
+   "slug": "treck-125-bull",
+   "brand": "TRECK",
+   "name": "125 BULL",
+   "url": null
+  },
+  {
+   "slug": "fuxin-fxatv110cc",
+   "brand": "FUXIN",
+   "name": "FXATV110CC",
+   "url": null
+  }
+ ],
+ "units": [
+  {
+   "id": "08-GK",
+   "inv": "08-GK",
+   "model": "avanzada-nitrox-go-kart",
+   "year": 2025,
+   "color": "VERDE",
+   "location": "FILA 1",
+   "serie": "L9NATDTK7S1940858",
+   "motor": "156FP12409267668",
+   "price": 21500
+  },
+  {
+   "id": "1600-226",
+   "inv": "1600-226",
+   "model": "avanzada-q6-110cr",
+   "year": 2026,
+   "color": "ROJO",
+   "location": "FILA 1",
+   "serie": "L85AG4FH1R1002799",
+   "motor": "152FMH23091518",
+   "price": 19000
+  },
+  {
+   "id": "1600-220",
+   "inv": "1600-220",
+   "model": "avanzada-q6-110cr",
+   "year": 2024,
+   "color": "AZUL",
+   "location": "FILA 1",
+   "serie": "L85AG4FH0R1002809",
+   "motor": "152FMH23091498",
+   "price": 19000
+  },
+  {
+   "id": "1600-164",
+   "inv": "1600-164",
+   "model": "avanzada-q6-110lp-ne-leopard",
+   "year": 2022,
+   "color": "NEGRO",
+   "location": "FILA 1",
+   "serie": "L9NACFK32N1705973",
+   "motor": "TZ152FMH22A000479",
+   "price": 27000
+  },
+  {
+   "id": "1600-147",
+   "inv": "1600-147",
+   "model": "avanzada-q6-110lp-ro-leopard",
+   "year": 2022,
+   "color": "ROJO",
+   "location": "FILA 1",
+   "serie": "L9NACFK36N1705894",
+   "motor": "TZ152FMH22A000460",
+   "price": 27000
+  },
+  {
+   "id": "1600-248",
+   "inv": "1600-248",
+   "model": "fuxin-fxatv110ccsf",
+   "year": 2024,
+   "color": "VERDE",
+   "location": "FILA 1",
+   "serie": "L4ZA4L1H6RF000031",
+   "motor": "152FMH23H08314",
+   "price": 24000
+  },
+  {
+   "id": "1600-252",
+   "inv": "1600-252",
+   "model": "fuxin-fxatv110ccsf",
+   "year": 2024,
+   "color": "AMARILLO",
+   "location": "FILA 1",
+   "serie": "L4ZA4L1HXRF000064",
+   "motor": "152FMH23H08251",
+   "price": 24000
+  },
+  {
+   "id": "1600-242",
+   "inv": "1600-242",
+   "model": "fuxin-fxatv110ccsf",
+   "year": 2024,
+   "color": "ROJO",
+   "location": "FILA 1",
+   "serie": "L4ZA4L1HXRF000064",
+   "motor": "152FMH23H08301",
+   "price": 24000
+  },
+  {
+   "id": "1107-237",
+   "inv": "1107-237",
+   "model": "avanzada-q7-125-raptor",
+   "year": 2026,
+   "color": "ROJO",
+   "location": "FILA 1",
+   "serie": "L9NACKDW5T1209739",
+   "motor": "154FMI250944289",
+   "price": 34500
+  },
+  {
+   "id": "1101-20",
+   "inv": "1101-20",
+   "model": "avanzada-q8-150rp-ne",
+   "year": 2022,
+   "color": "NEGRO",
+   "location": "FILA 1",
+   "serie": "L9NACGN36N1301172",
+   "motor": "1P57FMJBMF082087",
+   "price": 35000
+  },
+  {
+   "id": "01-TR",
+   "inv": "01-TR",
+   "model": "avanzada-triciclo-electrico",
+   "year": 2025,
+   "color": "GRIS",
+   "location": "FILA 1",
+   "serie": "LTX3S4Z28SD500137",
+   "motor": "XJZ25051233313",
+   "price": 21000
+  },
+  {
+   "id": "511-3",
+   "inv": "511-3",
+   "model": "tank-tk150-7-hurricane-150-cc",
+   "year": null,
+   "color": "ROJO",
+   "location": "FILA 1",
+   "serie": "3CCPCKLD692500067",
+   "motor": "",
+   "price": 18500
+  },
+  {
+   "id": "106-2",
+   "inv": "106-2",
+   "model": "lifan-lf150t-15-tb150",
+   "year": 2017,
+   "color": "NEGRO",
+   "location": "FILA 1",
+   "serie": "LF3TCCKF05HB000021",
+   "motor": "1P57QMJ H5K01559",
+   "price": 28000
+  },
+  {
+   "id": "104-47",
+   "inv": "104-47",
+   "model": "treck-krathos-250",
+   "year": 2022,
+   "color": "ROJO",
+   "location": "FILA 1",
+   "serie": "LJEPDNLG7NA013509",
+   "motor": "166YMMN5N00085",
+   "price": 44000
+  },
+  {
+   "id": "702-24",
+   "inv": "702-24",
+   "model": "avanzada-cross-pro308-300",
+   "year": 2026,
+   "color": "",
+   "location": "FILA 1",
+   "serie": "LRYJDPL07T0001037",
+   "motor": "172YMN3TA010105",
+   "price": 39800
+  },
+  {
+   "id": "104-46",
+   "inv": "104-46",
+   "model": "treck-krathos-250",
+   "year": 2022,
+   "color": "ROJO",
+   "location": "FILA 1",
+   "serie": "LJEPDNLG7NA013509",
+   "motor": "166YMMN5N00085",
+   "price": 44000
+  },
+  {
+   "id": "41-A",
+   "inv": "41-A",
+   "model": "avanzada-r8-mini-pista",
+   "year": 2023,
+   "color": "ROJO",
+   "location": "FILA 2",
+   "serie": "L85DR2FA4P1057811",
+   "motor": "",
+   "price": 7500
+  },
+  {
+   "id": "52-A",
+   "inv": "52-A",
+   "model": "treck-pocket",
+   "year": null,
+   "color": "NEGRO",
+   "location": "FILA 2",
+   "serie": "L7WPE01A2NC203363",
+   "motor": "",
+   "price": 7500
+  },
+  {
+   "id": "1900-125",
+   "inv": "1900-125",
+   "model": "avanzada-minicross",
+   "year": 2026,
+   "color": "ROJO",
+   "location": "FILA 2",
+   "serie": "L3EPAAL00TL002203",
+   "motor": "XFR44F25040303",
+   "price": 10000
+  },
+  {
+   "id": "1900-124",
+   "inv": "1900-124",
+   "model": "avanzada-minicross",
+   "year": 2026,
+   "color": "AZUL",
+   "location": "FILA 2",
+   "serie": "L3EPAAL0XTL002189",
+   "motor": "XFR44F25040299",
+   "price": 10000
+  },
+  {
+   "id": "1900-84",
+   "inv": "1900-84",
+   "model": "avanzada-crosstar",
+   "year": 2023,
+   "color": "ROJO",
+   "location": "FILA 2",
+   "serie": "L9NYCFDC9P1500049",
+   "motor": "TZ152FMH230100412",
+   "price": 21500
+  },
+  {
+   "id": "249-A",
+   "inv": "249-A",
+   "model": "avanzada-q5-50",
+   "year": 2026,
+   "color": "AMARILLO",
+   "location": "FILA 2",
+   "serie": "L3ERAAL09TL006095",
+   "motor": "XFR44F25060420",
+   "price": 12500
+  },
+  {
+   "id": "248-A",
+   "inv": "248-A",
+   "model": "avanzada-q5-50-raptor",
+   "year": 2025,
+   "color": "ROJO",
+   "location": "FILA 2",
+   "serie": "L3ERAAL02SL008737",
+   "motor": "XSD44F24110434",
+   "price": 12500
+  },
+  {
+   "id": "205-6",
+   "inv": "205-6",
+   "model": "avanzada-a6-180-motocicleta-deportiva",
+   "year": 2025,
+   "color": "NEGRO",
+   "location": "FILA 2",
+   "serie": "L8YTCLPJ0SY100044",
+   "motor": "1P61QMK250100130",
+   "price": 31000
+  },
+  {
+   "id": "205-8",
+   "inv": "205-8",
+   "model": "avanzada-a6-180-motocicleta-deportiva",
+   "year": 2025,
+   "color": "ROSA",
+   "location": "FILA 2",
+   "serie": "L8YTCLPJXSY100021",
+   "motor": "1P61QMK250100132",
+   "price": 31000
+  },
+  {
+   "id": "205-2",
+   "inv": "205-2",
+   "model": "avanzada-a6-180-motocicleta-deportiva",
+   "year": 2025,
+   "color": "NEGRO",
+   "location": "FILA 2",
+   "serie": "L8YTCLPJ0SY100044",
+   "motor": "1P61QMK250100130",
+   "price": 31000
+  },
+  {
+   "id": "107-1",
+   "inv": "107-1",
+   "model": "avanzada-a5-180-motoneta",
+   "year": 2025,
+   "color": "ROJO",
+   "location": "FILA 2",
+   "serie": "L8YTCLPD7SY100083",
+   "motor": "1P61QMK250100075",
+   "price": 28500
+  },
+  {
+   "id": "1303-A",
+   "inv": "1303-A",
+   "model": "avanzada-ninja-160",
+   "year": 2025,
+   "color": "VERDE",
+   "location": "FILA 2",
+   "serie": "H0BSCGL27SH016987",
+   "motor": "1P56FMJ21S038260",
+   "price": 38500
+  },
+  {
+   "id": "107-5",
+   "inv": "107-5",
+   "model": "avanzada-a5-180-motoneta",
+   "year": 2025,
+   "color": "NARANJA",
+   "location": "FILA 2",
+   "serie": "L8YTCLPD5SY100065",
+   "motor": "1P61QMK250100051",
+   "price": 28500
+  },
+  {
+   "id": "101-7",
+   "inv": "101-7",
+   "model": "lifan-lifan-110cc-tp",
+   "year": 2025,
+   "color": "ROJO",
+   "location": "FILA 2",
+   "serie": "",
+   "motor": "",
+   "price": 18500
+  },
+  {
+   "id": "704-2",
+   "inv": "704-2",
+   "model": "treck-element",
+   "year": null,
+   "color": "ROJO",
+   "location": "FILA 2",
+   "serie": "",
+   "motor": "",
+   "price": 18500
+  },
+  {
+   "id": "101-11",
+   "inv": "101-11",
+   "model": "lifan-lf-125-ar125",
+   "year": 2017,
+   "color": "AMARILLO",
+   "location": "FILA 2",
+   "serie": "LF3XCJTH1HA000089",
+   "motor": "1P52FMI H1018981",
+   "price": 18500
+  },
+  {
+   "id": "104-37",
+   "inv": "104-37",
+   "model": "lifan-lf-150-kp-naranaja",
+   "year": null,
+   "color": "NARANJA",
+   "location": "FILA 2",
+   "serie": "LF3PDKAB1GA000013",
+   "motor": "158MJ-G1001863",
+   "price": 30000
+  },
+  {
+   "id": "104-18",
+   "inv": "104-18",
+   "model": "lifan-158mj-g1001863",
+   "year": 2017,
+   "color": "ROJO",
+   "location": "FILA 2",
+   "serie": "LF3PCK2EXHA001786",
+   "motor": "162FMJ-V H1220548",
+   "price": 25000
+  },
+  {
+   "id": "105-18",
+   "inv": "105-18",
+   "model": "lifan-lf200-fr200",
+   "year": 2015,
+   "color": "NEGRO",
+   "location": "FILA 2",
+   "serie": "LF3PCM5A2HB000016",
+   "motor": "163FML-2MPH5005958",
+   "price": 23000
+  },
+  {
+   "id": "105-27",
+   "inv": "105-27",
+   "model": "treck-trazo-racer",
+   "year": 2020,
+   "color": "BLANCO",
+   "location": "FILA 2",
+   "serie": "LNGPCK013LW001488",
+   "motor": "162FMJK15050278",
+   "price": 18500
+  },
+  {
+   "id": "105-32",
+   "inv": "105-32",
+   "model": "treck-trazo-racer",
+   "year": 2020,
+   "color": "NARANJA",
+   "location": "FILA 2",
+   "serie": "LNGPCK01XLW001374",
+   "motor": "162FMJK15050293",
+   "price": 18500
+  },
+  {
+   "id": "1106-97",
+   "inv": "1106-97",
+   "model": "avanzada-m200-bl-arise",
+   "year": 2025,
+   "color": "BLANCO",
+   "location": "FILA 3",
+   "serie": "LL8AEK4F0S0A10021",
+   "motor": "LH1P57FJ2NH00677",
+   "price": 73000
+  },
+  {
+   "id": "1106-42",
+   "inv": "1106-42",
+   "model": "avanzada-m200-ro-arise",
+   "year": 2023,
+   "color": "ROJO",
+   "location": "FILA 3",
+   "serie": "LL8AEK4F9P0A10011",
+   "motor": "LH1P57FJ2NA00052",
+   "price": 73000
+  },
+  {
+   "id": "1106-98",
+   "inv": "1106-98",
+   "model": "avanzada-m200-az-arise",
+   "year": 2025,
+   "color": "AZUL",
+   "location": "FILA 3",
+   "serie": "LL8AEK4F5S0A10029",
+   "motor": "LH1P57FJ2NH00718",
+   "price": 73000
+  },
+  {
+   "id": "1106-122",
+   "inv": "1106-122",
+   "model": "avanzada-q9-200-raptor",
+   "year": 2026,
+   "color": "NEGRO",
+   "location": "FILA 3",
+   "serie": "L9NACSV37T1211450",
+   "motor": "1P63QML250905161",
+   "price": 54000
+  },
+  {
+   "id": "1106-121",
+   "inv": "1106-121",
+   "model": "avanzada-q9-200-raptor",
+   "year": 2026,
+   "color": "AZUL",
+   "location": "FILA 3",
+   "serie": "L9NACSV32T1211419",
+   "motor": "1P63QML250905225",
+   "price": 54000
+  },
+  {
+   "id": "1106-76",
+   "inv": "1106-76",
+   "model": "avanzada-q9-200pk-rl",
+   "year": 2024,
+   "color": "ROSA",
+   "location": "FILA 3",
+   "serie": "L9NACMV30R1101022",
+   "motor": "161QMLP08000534",
+   "price": 58500
+  },
+  {
+   "id": "1106-90",
+   "inv": "1106-90",
+   "model": "avanzada-q9-amazer-rinalum",
+   "year": 2025,
+   "color": "BLANCO",
+   "location": "FILA 3",
+   "serie": "L9NACMEJ4S1205582",
+   "motor": "1P63QML2406A4484",
+   "price": 52000
+  },
+  {
+   "id": "1106-99",
+   "inv": "1106-99",
+   "model": "avanzada-q9-amazer-rinalum",
+   "year": 2025,
+   "color": "NARANJA",
+   "location": "FILA 3",
+   "serie": "L9NACSEJ5S1310586",
+   "motor": "JN1P63QMK24100578",
+   "price": 52000
+  },
+  {
+   "id": "1106-131",
+   "inv": "1106-131",
+   "model": "avanzada-q9-200-amazer",
+   "year": 2026,
+   "color": "ROJO",
+   "location": "FILA 3",
+   "serie": "L9NACSEJXT1459481",
+   "motor": "1963QML250702844",
+   "price": 44000
+  },
+  {
+   "id": "1106-124",
+   "inv": "1106-124",
+   "model": "avanzada-q9-200-hunter",
+   "year": 2026,
+   "color": "AZUL",
+   "location": "FILA 3",
+   "serie": "L3ERELL06TL002764",
+   "motor": "1P63QML25078685",
+   "price": 42500
+  },
+  {
+   "id": "1106-79",
+   "inv": "1106-79",
+   "model": "avanzada-q9-amazer",
+   "year": 2025,
+   "color": "BLANCO",
+   "location": "FILA 3",
+   "serie": "L9NACSEJ5S1939524",
+   "motor": "JN1P63QMK24093899",
+   "price": 44000
+  },
+  {
+   "id": "1400-34",
+   "inv": "1400-34",
+   "model": "avanzada-atv-prolander-4x4",
+   "year": 2025,
+   "color": "ROJO",
+   "location": "FILA 4",
+   "serie": "H0SAB4C16S1000146",
+   "motor": "YK182MQBA0922",
+   "price": 149000
+  },
+  {
+   "id": "1400-21",
+   "inv": "1400-21",
+   "model": "avanzada-2022-cuatrimoto-atv400ro",
+   "year": 2022,
+   "color": "AZUL",
+   "location": "FILA 4",
+   "serie": "LL8AFS4W1N 0A00051",
+   "motor": "LH180MQMH00286",
+   "price": 135000
+  },
+  {
+   "id": "1400-22",
+   "inv": "1400-22",
+   "model": "avanzada-2021-amarok-300-atv300am",
+   "year": 2021,
+   "color": "NEGRO",
+   "location": "FILA 4",
+   "serie": "LL8ATN4WXM0A00087",
+   "motor": "LH173MNLK00229",
+   "price": 95000
+  },
+  {
+   "id": "1400-49",
+   "inv": "1400-49",
+   "model": "avanzada-atv250ak-amarok",
+   "year": 2026,
+   "color": "ROJO",
+   "location": "FILA 4",
+   "serie": "H0SABMB12S1000114",
+   "motor": "JN1P70YMM25090107",
+   "price": 78000
+  },
+  {
+   "id": "1400-50",
+   "inv": "1400-50",
+   "model": "avanzada-atv250ak-amarok",
+   "year": 2026,
+   "color": "AZUL",
+   "location": "FILA 4",
+   "serie": "H0SABMB14S1000132",
+   "motor": "JN1P70YMM25090066",
+   "price": 78000
+  },
+  {
+   "id": "1400-41",
+   "inv": "1400-41",
+   "model": "avanzada-amax250ro",
+   "year": 2026,
+   "color": "ROJO",
+   "location": "FILA 4",
+   "serie": "L08AHN0A8T1000064",
+   "motor": "1P69YMM25074081",
+   "price": 74000
+  },
+  {
+   "id": "1106-120",
+   "inv": "1106-120",
+   "model": "avanzada-q9-200-raptor",
+   "year": 2026,
+   "color": "ROJO",
+   "location": "FILA 4",
+   "serie": "L9NACSV38T1211473",
+   "motor": "1P63QML250905174",
+   "price": 50000
+  },
+  {
+   "id": "1400-36",
+   "inv": "1400-36",
+   "model": "avanzada-utv-alfa",
+   "year": 2023,
+   "color": "ROJO",
+   "location": "FILA 4",
+   "serie": "H0SUALA19P1000176",
+   "motor": "161QMLN0200667",
+   "price": 108000
+  },
+  {
+   "id": "5127",
+   "inv": "5127",
+   "model": "dazon-dz200q1",
+   "year": 2026,
+   "color": "AZUL",
+   "location": "LATERAL",
+   "serie": "3DVHCMZE5T1M00590",
+   "motor": "DZ164FMLT2M00590",
+   "price": 53000
+  },
+  {
+   "id": "5078",
+   "inv": "5078",
+   "model": "treck-rampante-250",
+   "year": 2019,
+   "color": "ROJO",
+   "location": "LATERAL",
+   "serie": "LB72NC1A1KL503416",
+   "motor": "170FMM LK503418",
+   "price": 52000
+  },
+  {
+   "id": "5086",
+   "inv": "5086",
+   "model": "piaggio-ape-dx400",
+   "year": 2023,
+   "color": "BLANCO",
+   "location": "LATERAL",
+   "serie": "MC3BK44BXP3183814",
+   "motor": "A2C1515187",
+   "price": 115000
+  },
+  {
+   "id": "5112",
+   "inv": "5112",
+   "model": "avanzada-cargo-268",
+   "year": 2026,
+   "color": "ROJO",
+   "location": "LATERAL",
+   "serie": "H64ZCNZY0T3901621",
+   "motor": "ZS167FMMT3901621",
+   "price": 63500
+  },
+  {
+   "id": "2100-3",
+   "inv": "2100-3",
+   "model": "avanzada-zs167fmmt3901621",
+   "year": 2023,
+   "color": "ROJO",
+   "location": "LATERAL",
+   "serie": "L37AMPAD8PZ010016",
+   "motor": "210707141",
+   "price": 115000
+  },
+  {
+   "id": "1400-3",
+   "inv": "1400-3",
+   "model": "avanzada-2021-cuatrimoto-t-archon-4x4-400cc",
+   "year": 2021,
+   "color": "ROJO",
+   "location": "LATERAL",
+   "serie": "LL8AKSHW8M0A10001",
+   "motor": "LH180MQ38LJ00120",
+   "price": 198000
+  },
+  {
+   "id": "1106-127",
+   "inv": "1106-127",
+   "model": "avanzada-q9-200-amazer",
+   "year": 2026,
+   "color": "ROJO",
+   "location": "BODEGA",
+   "serie": "L9NACSEJ1T1459465",
+   "motor": "1P63QML250703004",
+   "price": 44000
+  },
+  {
+   "id": "205-7",
+   "inv": "205-7",
+   "model": "avanzada-a6-180-motocicleta-deportiva",
+   "year": null,
+   "color": "HEPOLLEN",
+   "location": "BODEGA",
+   "serie": "L8YTCLPJ6SY100016",
+   "motor": "1P61QMK250100142",
+   "price": 31500
+  },
+  {
+   "id": "107-3",
+   "inv": "107-3",
+   "model": "avanzada-a5-180-motoneta",
+   "year": 2025,
+   "color": "BLANCO",
+   "location": "BODEGA",
+   "serie": "L8YTCLPD1SY100029",
+   "motor": "1PQ1QMK250100068",
+   "price": 31500
+  },
+  {
+   "id": "107-6",
+   "inv": "107-6",
+   "model": "avanzada-a5-180-motoneta",
+   "year": 2025,
+   "color": "AZUL",
+   "location": "BODEGA",
+   "serie": "L8YTCLPD1SY100029",
+   "motor": "1PQ1QMK250100068",
+   "price": 28500
+  },
+  {
+   "id": "107-4",
+   "inv": "107-4",
+   "model": "avanzada-a5-180-motoneta",
+   "year": 2025,
+   "color": "ROSA",
+   "location": "BODEGA",
+   "serie": "L8YTCLPD9SY100070",
+   "motor": "1P61QMK250100027",
+   "price": 28500
+  },
+  {
+   "id": "1107-241",
+   "inv": "1107-241",
+   "model": "avanzada-q7-125-raptor",
+   "year": 2026,
+   "color": "AZUL",
+   "location": "BODEGA",
+   "serie": "L9NACKDW9T1209744",
+   "motor": "154FMI250944406",
+   "price": 34500
+  },
+  {
+   "id": "1400-48",
+   "inv": "1400-48",
+   "model": "avanzada-atv250ak-amarok",
+   "year": 2026,
+   "color": "NEGRO",
+   "location": "BODEGA",
+   "serie": "H0SABMB18S1000148",
+   "motor": "JN1P70YMM25090084",
+   "price": 78000
+  },
+  {
+   "id": "1106-117",
+   "inv": "1106-117",
+   "model": "avanzada-q9-200-ninja",
+   "year": 2026,
+   "color": "AZUL",
+   "location": "BODEGA",
+   "serie": "L3ERELL07TL011912",
+   "motor": "1P63QML25090794",
+   "price": 45000
+  },
+  {
+   "id": "1106-128",
+   "inv": "1106-128",
+   "model": "avanzada-q9-200-apex",
+   "year": 2026,
+   "color": "ROJO",
+   "location": "BODEGA",
+   "serie": "L9NACSEJ2T1101615",
+   "motor": "1P63QML250804430",
+   "price": 45000
+  },
+  {
+   "id": "1107-238",
+   "inv": "1107-238",
+   "model": "avanzada-q9-200-apex",
+   "year": 2026,
+   "color": "ROJO",
+   "location": "BODEGA",
+   "serie": "L9NACSEJ2T1101615",
+   "motor": "1P63QML250804430",
+   "price": 45000
+  },
+  {
+   "id": "1107-34",
+   "inv": "1107-34",
+   "model": "treck-scala-125cc",
+   "year": null,
+   "color": "ROJO",
+   "location": "BODEGA",
+   "serie": "L4ZA4L1J7MF000115",
+   "motor": "1P52FMI20GH0705",
+   "price": 28000
+  },
+  {
+   "id": "1106-119",
+   "inv": "1106-119",
+   "model": "avanzada-q9-200-ninja",
+   "year": 2026,
+   "color": "VERDE",
+   "location": "BODEGA",
+   "serie": "L3ERELL07TL011893",
+   "motor": "1P63QML25090694",
+   "price": 47500
+  },
+  {
+   "id": "37A",
+   "inv": "37A",
+   "model": "avanzada-r8-mini-pista",
+   "year": 2023,
+   "color": "ROJO",
+   "location": "BODEGA",
+   "serie": "L85DR2FA2P1057810",
+   "motor": "",
+   "price": 7500
+  },
+  {
+   "id": "35A",
+   "inv": "35A",
+   "model": "avanzada-r8-mini-pista",
+   "year": 2023,
+   "color": "ROJO",
+   "location": "BODEGA",
+   "serie": "L85DR2FA6P1057793",
+   "motor": "",
+   "price": 7500
+  },
+  {
+   "id": "236A",
+   "inv": "236A",
+   "model": "avanzada-q5-50",
+   "year": 2026,
+   "color": "NARANJA PINEAPPLE",
+   "location": "BODEGA",
+   "serie": "L3ERAAL08TL006010",
+   "motor": "XFR44F25060408",
+   "price": 12500
+  },
+  {
+   "id": "237A",
+   "inv": "237A",
+   "model": "avanzada-q5-50",
+   "year": 2026,
+   "color": "AZUL CAMUFLAJE",
+   "location": "BODEGA",
+   "serie": "L3ERAAL03TL006044",
+   "motor": "XFR44F25060278",
+   "price": 12500
+  },
+  {
+   "id": "5128",
+   "inv": "5128",
+   "model": "dazon-motocarro",
+   "year": 2025,
+   "color": "AZUL",
+   "location": "BODEGA",
+   "serie": "3DVHCMZE3T1M00569",
+   "motor": "DZ164FMLT2M00569",
+   "price": 53000
+  },
+  {
+   "id": "09-B",
+   "inv": "09-B",
+   "model": "avanzada-bicicleta-electrica",
+   "year": 2025,
+   "color": "ROJO",
+   "location": "BODEGA",
+   "serie": "354122501010194",
+   "motor": "",
+   "price": 12800
+  },
+  {
+   "id": "02-B",
+   "inv": "02-B",
+   "model": "avanzada-bicicleta-electrica",
+   "year": 2025,
+   "color": "AZUL",
+   "location": "BODEGA",
+   "serie": "354122456010914",
+   "motor": "",
+   "price": 12800
+  },
+  {
+   "id": "104-21",
+   "inv": "104-21",
+   "model": "avanzada-lf150-10b-kp",
+   "year": 2015,
+   "color": "",
+   "location": "LLANTERA",
+   "serie": "LF3PDKAB8GA000011",
+   "motor": "158MJG1001852",
+   "price": 30000
+  },
+  {
+   "id": "104-41",
+   "inv": "104-41",
+   "model": "treck-krathos-treck",
+   "year": 2021,
+   "color": "AZUL",
+   "location": "LLANTERA",
+   "serie": "LJEPDNLG4MA001882",
+   "motor": "166YMMM1N00028",
+   "price": 44000
+  },
+  {
+   "id": "205-3",
+   "inv": "205-3",
+   "model": "avanzada-a6-180-motocicleta-deportiva",
+   "year": 2025,
+   "color": "ROJO",
+   "location": "LLANTERA",
+   "serie": "L8YTCLPJ9SY100043",
+   "motor": "1P61QMK250100155",
+   "price": 31000
+  },
+  {
+   "id": "205-5",
+   "inv": "205-5",
+   "model": "avanzada-a5-180-motoneta",
+   "year": 2025,
+   "color": "AZUL CIELO",
+   "location": "LLANTERA",
+   "serie": "L8YTCLPJ3SY100037",
+   "motor": "1P61QMK250100168",
+   "price": 28500
+  },
+  {
+   "id": "702-23",
+   "inv": "702-23",
+   "model": "avanzada-cross-pro308",
+   "year": 2026,
+   "color": "ROJO/BLANCO",
+   "location": "LLANTERA",
+   "serie": "LRYJDPL08T0001130",
+   "motor": "172YMN3TA010127",
+   "price": 38800
+  },
+  {
+   "id": "1106-78",
+   "inv": "1106-78",
+   "model": "avanzada-q9-amazer",
+   "year": 2025,
+   "color": "BLANCO",
+   "location": "LLANTERA",
+   "serie": "L9NACSEJ8S1935337",
+   "motor": "1P63QML2408A7551",
+   "price": 44000
+  },
+  {
+   "id": "1106-111",
+   "inv": "1106-111",
+   "model": "treck-warrior-200",
+   "year": 2025,
+   "color": "BLANCO",
+   "location": "LLANTERA",
+   "serie": "L9NACSEJ9S1311561",
+   "motor": "154FMI24A01392",
+   "price": 44000
+  },
+  {
+   "id": "1107-112",
+   "inv": "1107-112",
+   "model": "treck-125-bull",
+   "year": 2024,
+   "color": "VERDE",
+   "location": "LLANTERA",
+   "serie": "A5YSCLH18RA000161",
+   "motor": "154FMI24A01392",
+   "price": 27000
+  },
+  {
+   "id": "1600-148",
+   "inv": "1600-148",
+   "model": "avanzada-q6-110lp-ro-leopard",
+   "year": 2022,
+   "color": "ROJO",
+   "location": "LLANTERA",
+   "serie": "L9NACFK36N1705930",
+   "motor": "TZ152FMH22A000537",
+   "price": 27000
+  },
+  {
+   "id": "1600-206",
+   "inv": "1600-206",
+   "model": "fuxin-fxatv110cc",
+   "year": 2023,
+   "color": "AMARILLO",
+   "location": "LLANTERA",
+   "serie": "L4ZA4L1H4PF000008",
+   "motor": "1P52FMH22A10031",
+   "price": 24000
+  },
+  {
+   "id": "1900-120",
+   "inv": "1900-120",
+   "model": "avanzada-minicross",
+   "year": 2025,
+   "color": "AZUL",
+   "location": "LLANTERA",
+   "serie": "L3EPAAL08SL007213",
+   "motor": "XSD44F24100249",
+   "price": 10000
+  },
+  {
+   "id": "1900-121",
+   "inv": "1900-121",
+   "model": "avanzada-minicross",
+   "year": 2025,
+   "color": "ROJO",
+   "location": "LLANTERA",
+   "serie": "L3EPAAL01SL007215",
+   "motor": "XSD44F24100262",
+   "price": 10000
+  },
+  {
+   "id": "243-A",
+   "inv": "243-A",
+   "model": "avanzada-q5-50",
+   "year": 2026,
+   "color": "AZUL PINEAPPLE",
+   "location": "LLANTERA",
+   "serie": "L3ERAAL06TL006197",
+   "motor": "XFR44F25060460",
+   "price": 12500
+  },
+  {
+   "id": "06-B",
+   "inv": "06-B",
+   "model": "avanzada-bicicleta-electrica",
+   "year": 2025,
+   "color": "ROJO",
+   "location": "LLANTERA",
+   "serie": "354122501010216",
+   "motor": "354122501010216",
+   "price": 12800
+  },
+  {
+   "id": "06-B-2",
+   "inv": "06-B",
+   "model": "avanzada-bicicleta-electrica",
+   "year": 2025,
+   "color": "NEGRO",
+   "location": "LLANTERA",
+   "serie": "354122501010002",
+   "motor": "354122501010002",
+   "price": 12800
+  }
+ ]
+}
