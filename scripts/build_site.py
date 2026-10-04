@@ -104,8 +104,11 @@ def header():
 <header class="top"><div class="wrap bar"><a href="/" class="logo" aria-label="{E(NAME)} - Inicio"><img src="/logo.svg" alt="{E(NAME)}" width="150" height="38"></a>
 <nav aria-label="Principal"><a href="/#catalogo">Catálogo</a><a href="/financiamiento/">Financiamiento</a><a href="/servicios/">Taller y refacciones</a><a href="/#visitanos">Ubicación</a></nav>{cta}</div></header>'''
 def dock():
-    items = [(f'<a href="tel:{TEL}">{icon("phone")}Llamar</a>' if B.get("phone") else ""), (f'<a class="wa" href="{E(wa("Hola, quiero información de una moto"))}" rel="noopener">{icon("chat")}WhatsApp</a>' if wa() else ""), f'<a href="{E(MAPS)}" target="_blank" rel="noopener">{icon("pin")}Cómo llegar</a>']
-    return '<nav class="dock" aria-label="Contacto rápido">' + "".join(items) + "</nav>"
+    items = [(f'<a href="tel:{TEL}">{icon("phone")}<span>Llamar</span></a>' if B.get("phone") else ""),
+             (f'<a class="wa" href="{E(wa("Hola, quiero información de una moto"))}" rel="noopener">{icon("chat")}<span>WhatsApp</span></a>' if wa() else ""),
+             f'<a href="{E(MAPS)}" target="_blank" rel="noopener">{icon("pin")}<span>Cómo llegar</span></a>']
+    return (f'<div class="fab" id="fab"><div class="fab-menu" id="fabMenu" hidden>{"".join(items)}</div>'
+            f'<button class="fab-btn" id="fabBtn" aria-expanded="false" aria-controls="fabMenu" aria-label="Contactar a {E(NAME)}">{icon("chat")}<span>Contáctanos</span></button></div>')
 
 def footer():
     contact = "".join(f"<li>{x}</li>" for x in [E(B["address"]) if B["address"] else "", f'<a href="tel:{TEL}">{E(B["phone"])}</a>' if B["phone"] else "", E(B["hours"]) if B["hours"] else ""] if x)
