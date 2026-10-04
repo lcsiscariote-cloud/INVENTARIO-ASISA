@@ -91,3 +91,5 @@ input,select{font:inherit;padding:13px 16px;border:1px solid var(--line);border-
 .dock a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 4px;font:600 12px Inter;text-decoration:none;color:var(--navy)}.dock a .ico{width:22px;height:22px}.dock a.wa{background:#18a957;color:#fff}body{padding-bottom:62px}}
 .loc .btn-light,.finband .btn-light{color:var(--navy)}.finband .btn-light{color:var(--red)}
 @media(max-width:860px){.hart{width:100%}}
+/* Oculta la barra flotante de Netlify (solo la ven usuarios con sesión de Netlify) para que no tape el contacto */
+netlify-drawer,#netlify-drawer,[class*="netlify-drawer"],iframe[src*="netlify.app/.netlify/drawer"]{display:none!important}
