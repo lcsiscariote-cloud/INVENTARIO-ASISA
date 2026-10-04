@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#c8102e">
-<title>Catálogo de Motos</title>
+<meta name="theme-color" content="#e31e24">
+<title>Assisa Motors | Catálogo de motos</title>
+<meta name="description" content="Catálogo de motos, motonetas, cuatrimotos y más en Assisa Motors.">
+<link rel="icon" href="logo.svg">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="top">
-  <a href="#/" class="logo">🏍️ <b>ASISA</b> Motos</a>
+  <a href="#/" class="logo" aria-label="Assisa Motors"><img src="logo.svg" alt="Assisa Motors"></a>
   <nav>
     <a href="#/" data-nav="catalog">Catálogo</a>
     <a href="#/escanear" data-nav="escanear" class="staff-only">Escanear QR</a>
@@ -19,6 +21,7 @@
 </header>
 <main id="app"></main>
 <div id="modal" class="modal" hidden></div>
+<footer class="foot"><img src="logo.svg" alt=""><p>Assisa Motors · Catálogo sujeto a disponibilidad. Precios y especificaciones pueden cambiar sin previo aviso.</p></footer>
 <script src="vendor/html5-qrcode.min.js" defer></script>
 <script src="vendor/qrcode.js" defer></script>
 <script src="app.js" defer></script>

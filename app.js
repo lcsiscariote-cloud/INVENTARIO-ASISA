@@ -17,7 +17,7 @@ const unitsOf = slug => DB.units.filter(u => u.model === slug);
 const modelBy = slug => DB.models.find(m => m.slug === slug);
 const photosOf = m => { const p = (MODELS[m.slug] || {}).photos || []; return p.length ? p : [`photos/${m.slug}.jpg`]; };
 function ph(m, i = 0) {
-  return `<div class="ph" style="position:relative">${esc(m.brand.slice(0, 2))}<img src="${esc(photosOf(m)[i])}" alt="${esc(m.name)}" style="position:absolute;inset:0" onerror="this.remove()"></div>`;
+  return `<div class="ph" style="position:relative">${esc(m.brand.slice(0, 1) + m.brand.slice(1, 2).toLowerCase())}<img src="${esc(photosOf(m)[i])}" alt="${esc(m.name)}" style="position:absolute;inset:0" onerror="this.remove()"></div>`;
 }
 function setNav(k) { document.querySelectorAll("nav a").forEach(a => a.classList.toggle("on", a.dataset.nav === k)); }
 
@@ -26,16 +26,19 @@ function viewCatalog() {
   setNav("catalog");
   const brands = [...new Set(DB.models.map(m => m.brand))].sort();
   const years = [...new Set(DB.units.map(u => u.year).filter(Boolean))].sort().reverse();
+  let brand = "";
   $("#app").innerHTML = `
+  ${staff ? "" : `<section class="hero"><h1>Encuentra tu próxima moto</h1><p>Motonetas, deportivas, cuatrimotos, minicross y más. Consulta modelos, colores y precios.</p>
+    <div class="stats"><div><b>${DB.models.length}</b><span>Modelos</span></div><div><b>${brands.length}</b><span>Marcas</span></div><div><b>${DB.units.length}</b><span>Unidades</span></div></div></section>`}
+  <div class="brandbar" id="bb"><button class="chip on" data-b="">Todas</button>${brands.map(b => `<button class="chip" data-b="${esc(b)}">${esc(b)} <small>${DB.models.filter(m => m.brand === b).length}</small></button>`).join("")}</div>
   <div class="filters">
     <input id="q" type="search" placeholder="Buscar modelo, marca o color…" autocomplete="off">
-    <select id="fb"><option value="">Todas las marcas</option>${brands.map(b => `<option>${esc(b)}</option>`).join("")}</select>
     <select id="fy"><option value="">Todos los años</option>${years.map(y => `<option>${y}</option>`).join("")}</select>
     ${staff ? `<select id="fl"><option value="">Toda ubicación</option>${[...new Set(DB.units.map(u => u.location))].sort().map(l => `<option>${esc(l)}</option>`).join("")}</select>` : `<span></span>`}
   </div>
   <p class="count" id="count"></p><div class="grid" id="grid"></div>`;
   const draw = () => {
-    const q = $("#q").value.toLowerCase().trim(), fb = $("#fb").value, fy = $("#fy").value, fl = $("#fl")?.value || "";
+    const q = $("#q").value.toLowerCase().trim(), fb = brand, fy = $("#fy").value, fl = $("#fl")?.value || "";
     const list = DB.models.filter(m => {
       if (fb && m.brand !== fb) return false;
       const us = unitsOf(m.slug).filter(u => (!fy || String(u.year) === fy) && (!fl || u.location === fl));
@@ -43,7 +46,7 @@ function viewCatalog() {
       const hay = (m.brand + " " + m.name + " " + us.map(u => u.color).join(" ")).toLowerCase();
       return !q || q.split(/\s+/).every(w => hay.includes(w));
     });
-    $("#count").textContent = `${list.length} modelos`;
+    $("#count").textContent = `${list.length} ${list.length === 1 ? "modelo" : "modelos"}`;
     $("#grid").innerHTML = list.map(m => {
       const us = unitsOf(m.slug), prices = us.map(u => u.price).filter(Boolean), colors = [...new Set(us.map(u => u.color).filter(Boolean))];
       return `<a class="card" href="#/modelo/${m.slug}">${ph(m)}<div class="b"><div class="brand">${esc(m.brand)}</div><div class="name">${esc(m.name)}</div>
@@ -51,7 +54,9 @@ function viewCatalog() {
       <div class="dots">${colors.map(dot).join("")}</div>${staff ? `<div class="price">${us.length} en piso</div>` : ""}</div></a>`;
     }).join("") || `<p class="empty">Sin resultados.</p>`;
   };
-  ["input", "change"].forEach(e => $(".filters").addEventListener(e, draw)); draw();
+  ["input", "change"].forEach(e => $(".filters").addEventListener(e, draw));
+  $("#bb").onclick = e => { const c = e.target.closest("[data-b]"); if (!c) return; brand = c.dataset.b; document.querySelectorAll("#bb .chip").forEach(x => x.classList.toggle("on", x === c)); draw(); };
+  draw();
 }
 
 function viewModel(slug, unitId) {
