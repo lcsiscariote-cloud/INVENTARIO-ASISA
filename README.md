@@ -13,7 +13,7 @@ Se despliega tal cual en Netlify (`publish = "."`, sin build). Las páginas se *
 
 ## Flujo de actualización
 1. **Inventario**: reemplaza `data/INVENTARIOS_2026.xlsx` → `python3 scripts/build_data.py` (`pip install openpyxl`).
-2. **Datos del negocio** (dirección, teléfono, WhatsApp, horario, URL del sitio, link de Google Maps): edita `data/business.json`.
+2. **Datos del negocio** (dirección, teléfono, WhatsApp, horario, URL del sitio, link de Google Maps, financieras y plazos `financiers`/`termMin`/`termMax`): edita `data/business.json`.
 3. **Fichas técnicas / descripción**: `data/models.json` (nunca se sobreescribe).
 4. **Fotos**: guarda `photos/<slug>.jpg` (y `<slug>-2.jpg`, …). Reemplazan la ilustración solas.
 5. **Regenera el sitio**: `python3 scripts/build_site.py` y sube los cambios.

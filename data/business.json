@@ -9,5 +9,11 @@
   "whatsapp": "",
   "hours": "",
   "email": "",
-  "mapsUrl": ""
+  "mapsUrl": "",
+  "financiers": [
+    "Atrato",
+    "Mexicash"
+  ],
+  "termMin": 6,
+  "termMax": 24
 }

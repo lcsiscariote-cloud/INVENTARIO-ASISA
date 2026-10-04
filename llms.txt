@@ -4,6 +4,13 @@
 
 Sitio: https://inventario-asisa-motos.netlify.app/
 
+## Servicios
+
+- Reparación de motos, motonetas y cuatrimotos: https://inventario-asisa-motos.netlify.app/servicios/
+- Venta de refacciones: https://inventario-asisa-motos.netlify.app/servicios/#refacciones
+- Trabajo con aseguradoras (reparación y refacciones): https://inventario-asisa-motos.netlify.app/servicios/#aseguradoras
+- Financiamiento con Atrato y Mexicash, plazos de 6 a 24 meses con abono a capital; el análisis de crédito se hace en sucursal según historial crediticio: https://inventario-asisa-motos.netlify.app/financiamiento/
+
 ## Deportivas
 
 - [Avanzada A6*180 MOTOCICLETA DEPORTIVA](https://inventario-asisa-motos.netlify.app/moto/avanzada-a6-180-motocicleta-deportiva/) — desde $31,000 MXN; colores: hepollen, negro, rojo, rosa
