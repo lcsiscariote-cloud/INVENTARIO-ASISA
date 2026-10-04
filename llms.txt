@@ -1,6 +1,6 @@
 # Assisa Motors
 
-> Tienda de motos, cuatrimotos, motonetas y vehículos eléctricos en León, Gto.. Marcas: Avanzada, Dazon, Fuxin, Lifan, Piaggio, Tank, Treck.
+> Tienda de motos, cuatrimotos, motonetas y vehículos eléctricos en León, Gto. Marcas: Avanzada, Dazon, Fuxin, Lifan, Piaggio, Tank, Treck.
 
 Sitio: https://inventario-asisa-motos.netlify.app/
 

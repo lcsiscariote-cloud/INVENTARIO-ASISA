@@ -186,7 +186,7 @@ def cat_page(c):
     return head(t, f'{art.NAMES[c]} en {CITY}: {len(lst)} modelos{f", desde {money(min(pr))}" if pr else ""}. {CAT_BLURB[c]}', f"/categoria/{CAT_SLUG[c]}/", ld(items)) + header() + body + footer()
 
 def write(path, s):
-    full = P(path.lstrip("/")); os.makedirs(os.path.dirname(full), exist_ok=True); open(full, "w").write(s)
+    full = P(path.lstrip("/")); os.makedirs(os.path.dirname(full), exist_ok=True); open(full, "w").write(s.replace("Gto..", "Gto."))
 shutil.rmtree(P("moto"), ignore_errors=True); shutil.rmtree(P("categoria"), ignore_errors=True)
 write("index.html", home())
 for m in ms: write(f'moto/{m["slug"]}/index.html', model_page(m))
