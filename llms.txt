@@ -1,0 +1,86 @@
+# Assisa Motors
+
+> Tienda de motos, cuatrimotos, motonetas y vehículos eléctricos en León, Gto.. Marcas: Avanzada, Dazon, Fuxin, Lifan, Piaggio, Tank, Treck.
+
+Sitio: https://inventario-asisa-motos.netlify.app/
+
+## Deportivas
+
+- [Avanzada A6*180 MOTOCICLETA DEPORTIVA](https://inventario-asisa-motos.netlify.app/moto/avanzada-a6-180-motocicleta-deportiva/) — desde $31,000 MXN; colores: hepollen, negro, rojo, rosa
+- [Avanzada NINJA 160](https://inventario-asisa-motos.netlify.app/moto/avanzada-ninja-160/) — desde $38,500 MXN; colores: verde
+
+## Motocicletas
+
+- [Avanzada A5*180 MOTONETA](https://inventario-asisa-motos.netlify.app/moto/avanzada-a5-180-motoneta/) — desde $28,500 MXN; colores: azul, azul cielo, blanco, naranja, rojo, rosa
+- [Avanzada LF150-10B(KP)](https://inventario-asisa-motos.netlify.app/moto/avanzada-lf150-10b-kp/) — desde $30,000 MXN
+- [Avanzada M200-AZ ARISE](https://inventario-asisa-motos.netlify.app/moto/avanzada-m200-az-arise/) — desde $73,000 MXN; colores: azul
+- [Avanzada M200-BL ARISE](https://inventario-asisa-motos.netlify.app/moto/avanzada-m200-bl-arise/) — desde $73,000 MXN; colores: blanco
+- [Avanzada M200-RO ARISE](https://inventario-asisa-motos.netlify.app/moto/avanzada-m200-ro-arise/) — desde $73,000 MXN; colores: rojo
+- [Avanzada ZS167FMMT3901621](https://inventario-asisa-motos.netlify.app/moto/avanzada-zs167fmmt3901621/) — desde $115,000 MXN; colores: rojo
+- [Lifan 158MJ-G1001863](https://inventario-asisa-motos.netlify.app/moto/lifan-158mj-g1001863/) — desde $25,000 MXN; colores: rojo
+- [Lifan LF 125(AR125)](https://inventario-asisa-motos.netlify.app/moto/lifan-lf-125-ar125/) — desde $18,500 MXN; colores: amarillo
+- [Lifan LF 150 KP NARANJA](https://inventario-asisa-motos.netlify.app/moto/lifan-lf-150-kp-naranaja/) — desde $30,000 MXN; colores: naranja
+- [Lifan LF150T-15(TB150)](https://inventario-asisa-motos.netlify.app/moto/lifan-lf150t-15-tb150/) — desde $28,000 MXN; colores: negro
+- [Lifan LF200(FR200)](https://inventario-asisa-motos.netlify.app/moto/lifan-lf200-fr200/) — desde $23,000 MXN; colores: negro
+- [Lifan LIFAN 110CC TP](https://inventario-asisa-motos.netlify.app/moto/lifan-lifan-110cc-tp/) — desde $18,500 MXN; colores: rojo
+- [Tank TK150-7 HURRICANE 150 CC](https://inventario-asisa-motos.netlify.app/moto/tank-tk150-7-hurricane-150-cc/) — desde $18,500 MXN; colores: rojo
+- [Treck 125 BULL](https://inventario-asisa-motos.netlify.app/moto/treck-125-bull/) — desde $27,000 MXN; colores: verde
+- [Treck ELEMENT](https://inventario-asisa-motos.netlify.app/moto/treck-element/) — desde $18,500 MXN; colores: rojo
+- [Treck KRATHOS 250](https://inventario-asisa-motos.netlify.app/moto/treck-krathos-250/) — desde $44,000 MXN; colores: rojo
+- [Treck KRATHOS TRECK](https://inventario-asisa-motos.netlify.app/moto/treck-krathos-treck/) — desde $44,000 MXN; colores: azul
+- [Treck TRAZO RACER](https://inventario-asisa-motos.netlify.app/moto/treck-trazo-racer/) — desde $18,500 MXN; colores: blanco, naranja
+- [Treck WARRIOR 200](https://inventario-asisa-motos.netlify.app/moto/treck-warrior-200/) — desde $44,000 MXN; colores: blanco
+
+## Motonetas
+
+- [Treck SCALA 125CC](https://inventario-asisa-motos.netlify.app/moto/treck-scala-125cc/) — desde $28,000 MXN; colores: rojo
+
+## Cuatrimotos y UTV
+
+- [Avanzada AMAROK 300 ATV300AM](https://inventario-asisa-motos.netlify.app/moto/avanzada-2021-amarok-300-atv300am/) — desde $95,000 MXN; colores: negro
+- [Avanzada AMAX250RO](https://inventario-asisa-motos.netlify.app/moto/avanzada-amax250ro/) — desde $74,000 MXN; colores: rojo
+- [Avanzada ATV PROLANDER 4X4](https://inventario-asisa-motos.netlify.app/moto/avanzada-atv-prolander-4x4/) — desde $149,000 MXN; colores: rojo
+- [Avanzada ATV250AK AMAROK](https://inventario-asisa-motos.netlify.app/moto/avanzada-atv250ak-amarok/) — desde $78,000 MXN; colores: azul, negro, rojo
+- [Avanzada CUATRIMOTO ATV400RO](https://inventario-asisa-motos.netlify.app/moto/avanzada-2022-cuatrimoto-atv400ro/) — desde $135,000 MXN; colores: azul
+- [Avanzada CUATRIMOTO T-ARCHON 4X4 400CC](https://inventario-asisa-motos.netlify.app/moto/avanzada-2021-cuatrimoto-t-archon-4x4-400cc/) — desde $198,000 MXN; colores: rojo
+- [Avanzada NITROX GO KART](https://inventario-asisa-motos.netlify.app/moto/avanzada-nitrox-go-kart/) — desde $21,500 MXN; colores: verde
+- [Avanzada Q5*50](https://inventario-asisa-motos.netlify.app/moto/avanzada-q5-50/) — desde $12,500 MXN; colores: amarillo, azul camuflaje, azul pineapple, naranja pineapple
+- [Avanzada Q5*50 RAPTOR](https://inventario-asisa-motos.netlify.app/moto/avanzada-q5-50-raptor/) — desde $12,500 MXN; colores: rojo
+- [Avanzada Q6*110CR](https://inventario-asisa-motos.netlify.app/moto/avanzada-q6-110cr/) — desde $19,000 MXN; colores: azul, rojo
+- [Avanzada Q6*110LP-NE LEOPARD](https://inventario-asisa-motos.netlify.app/moto/avanzada-q6-110lp-ne-leopard/) — desde $27,000 MXN; colores: negro
+- [Avanzada Q6*110LP-RO LEOPARD](https://inventario-asisa-motos.netlify.app/moto/avanzada-q6-110lp-ro-leopard/) — desde $27,000 MXN; colores: rojo
+- [Avanzada Q7*125 RAPTOR](https://inventario-asisa-motos.netlify.app/moto/avanzada-q7-125-raptor/) — desde $34,500 MXN; colores: azul, rojo
+- [Avanzada Q8*150RP-NE](https://inventario-asisa-motos.netlify.app/moto/avanzada-q8-150rp-ne/) — desde $35,000 MXN; colores: negro
+- [Avanzada Q9*200 AMAZER](https://inventario-asisa-motos.netlify.app/moto/avanzada-q9-200-amazer/) — desde $44,000 MXN; colores: rojo
+- [Avanzada Q9*200 APEX](https://inventario-asisa-motos.netlify.app/moto/avanzada-q9-200-apex/) — desde $45,000 MXN; colores: rojo
+- [Avanzada Q9*200 HUNTER](https://inventario-asisa-motos.netlify.app/moto/avanzada-q9-200-hunter/) — desde $42,500 MXN; colores: azul
+- [Avanzada Q9*200 NINJA](https://inventario-asisa-motos.netlify.app/moto/avanzada-q9-200-ninja/) — desde $45,000 MXN; colores: azul, verde
+- [Avanzada Q9*200 RAPTOR](https://inventario-asisa-motos.netlify.app/moto/avanzada-q9-200-raptor/) — desde $50,000 MXN; colores: azul, negro, rojo
+- [Avanzada Q9*200PK-RL](https://inventario-asisa-motos.netlify.app/moto/avanzada-q9-200pk-rl/) — desde $58,500 MXN; colores: rosa
+- [Avanzada Q9*AMAZER](https://inventario-asisa-motos.netlify.app/moto/avanzada-q9-amazer/) — desde $44,000 MXN; colores: blanco
+- [Avanzada Q9*AMAZER RINALUM](https://inventario-asisa-motos.netlify.app/moto/avanzada-q9-amazer-rinalum/) — desde $52,000 MXN; colores: blanco, naranja
+- [Avanzada UTV ALFA](https://inventario-asisa-motos.netlify.app/moto/avanzada-utv-alfa/) — desde $108,000 MXN; colores: rojo
+- [Fuxin FXATV110CC](https://inventario-asisa-motos.netlify.app/moto/fuxin-fxatv110cc/) — desde $24,000 MXN; colores: amarillo
+- [Fuxin FXATV110CCSF](https://inventario-asisa-motos.netlify.app/moto/fuxin-fxatv110ccsf/) — desde $24,000 MXN; colores: amarillo, rojo, verde
+
+## Cross y minimotos
+
+- [Avanzada CROSS PRO308](https://inventario-asisa-motos.netlify.app/moto/avanzada-cross-pro308/) — desde $38,800 MXN; colores: rojo/blanco
+- [Avanzada CROSS PRO308 300](https://inventario-asisa-motos.netlify.app/moto/avanzada-cross-pro308-300/) — desde $39,800 MXN
+- [Avanzada CROSSTAR](https://inventario-asisa-motos.netlify.app/moto/avanzada-crosstar/) — desde $21,500 MXN; colores: rojo
+- [Avanzada MINICROSS](https://inventario-asisa-motos.netlify.app/moto/avanzada-minicross/) — desde $10,000 MXN; colores: azul, rojo
+- [Avanzada R8 MINI PISTA](https://inventario-asisa-motos.netlify.app/moto/avanzada-r8-mini-pista/) — desde $7,500 MXN; colores: rojo
+- [Treck POCKET](https://inventario-asisa-motos.netlify.app/moto/treck-pocket/) — desde $7,500 MXN; colores: negro
+
+## Eléctricos
+
+- [Avanzada BICICLETA ELECTRICA](https://inventario-asisa-motos.netlify.app/moto/avanzada-bicicleta-electrica/) — desde $12,800 MXN; colores: azul, negro, rojo
+- [Avanzada TRICICLO ELECTRICO](https://inventario-asisa-motos.netlify.app/moto/avanzada-triciclo-electrico/) — desde $21,000 MXN; colores: gris
+
+## Motocarros y carga
+
+- [Avanzada CARGO 268](https://inventario-asisa-motos.netlify.app/moto/avanzada-cargo-268/) — desde $63,500 MXN; colores: rojo
+- [Dazon DZ200Q1](https://inventario-asisa-motos.netlify.app/moto/dazon-dz200q1/) — desde $53,000 MXN; colores: azul
+- [Dazon MOTOCARRO](https://inventario-asisa-motos.netlify.app/moto/dazon-motocarro/) — desde $53,000 MXN; colores: azul
+- [Piaggio APE DX400](https://inventario-asisa-motos.netlify.app/moto/piaggio-ape-dx400/) — desde $115,000 MXN; colores: blanco
+- [Treck RAMPANTE 250](https://inventario-asisa-motos.netlify.app/moto/treck-rampante-250/) — desde $52,000 MXN; colores: rojo

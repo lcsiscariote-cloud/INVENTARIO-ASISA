@@ -1,21 +1,26 @@
-# Catálogo e inventario de motos (sitio estático)
+# Assisa Motors · catálogo e inventario (sitio estático)
 
-Sin build ni dependencias: se despliega tal cual en Netlify (`publish = "."`).
+Se despliega tal cual en Netlify (`publish = "."`, sin build). Las páginas se **pre-generan** como HTML real para que Google y los asistentes de IA (ChatGPT, Claude, Perplexity…) puedan leer el catálogo.
 
-## Vistas
-| Ruta | Quién | Qué hace |
-|---|---|---|
-| `#/` | Todos | Catálogo por modelo: buscar, filtrar marca/año, colores |
-| `#/modelo/<slug>` | Todos | Fotos, colores/años, ficha técnica, enlace al fabricante |
-| `#/u/<inventario>` | QR de cada moto | Ficha de esa unidad. En modo Personal muestra serie, motor, ubicación |
-| `#/escanear` | Personal | Escáner de QR con la cámara (o captura manual del inventario) |
-| `#/qr` | Personal | Etiquetas QR imprimibles (todas o por ubicación) |
+## Estructura
+| Ruta | Para qué |
+|---|---|
+| `/` | Portada pública: catálogo, categorías, preguntas frecuentes, ubicación |
+| `/moto/<slug>/` | Una página por modelo (colores, precio, ficha). El QR de cada unidad apunta aquí con `?u=<inventario>` |
+| `/categoria/<tipo>/` | Una página por categoría (motonetas, cuatrimotos…) |
+| `/staff/` | App de personal: PIN, escáner QR, etiquetas, serie/motor/ubicación (`noindex`) |
+| `sitemap.xml`, `robots.txt`, `llms.txt` | SEO y descubrimiento por IA |
 
-## Actualizar datos
-- **Inventario**: reemplaza `data/INVENTARIOS_2026.xlsx` y corre `python3 scripts/build_data.py` (`pip install openpyxl`). Regenera `data/inventory.json`.
-- **Fichas técnicas / descripción / fotos**: edita `data/models.json` (una entrada por modelo; el `slug` está en `inventory.json`). Nunca se sobreescribe.
-- **Fotos**: súbelas a `photos/<slug>.jpg` y se usan solas, o lista varias en `models.json` → `"photos": ["photos/a.jpg", ...]`.
-- **Ajustes** (PIN, precio público, WhatsApp): constante `CONFIG` al inicio de `app.js`.
+## Flujo de actualización
+1. **Inventario**: reemplaza `data/INVENTARIOS_2026.xlsx` → `python3 scripts/build_data.py` (`pip install openpyxl`).
+2. **Datos del negocio** (dirección, teléfono, WhatsApp, horario, URL del sitio, link de Google Maps): edita `data/business.json`.
+3. **Fichas técnicas / descripción**: `data/models.json` (nunca se sobreescribe).
+4. **Fotos**: guarda `photos/<slug>.jpg` (y `<slug>-2.jpg`, …). Reemplazan la ilustración solas.
+5. **Regenera el sitio**: `python3 scripts/build_site.py` y sube los cambios.
 
-## Nota de seguridad
-El modo Personal usa un PIN en el navegador: oculta serie/motor/ubicación a clientes casuales, pero los datos están en `data/inventory.json` y son accesibles a quien los busque. Para protegerlos de verdad, separarlos tras una Netlify Function o activar contraseña en el sitio.
+## SEO local (León, Gto.)
+Incluye JSON-LD (`MotorcycleDealer`, `Product`, `FAQPage`, `ItemList`, `BreadcrumbList`), `sitemap.xml`, `robots.txt` que permite a los bots de IA y `llms.txt`.
+Para aparecer de verdad: llena `data/business.json`, crea/verifica tu **Perfil de Negocio en Google** con el mismo nombre, dirección y teléfono, y registra el sitio en **Google Search Console** enviando `sitemap.xml`. Si cambias de dominio, actualiza `siteUrl`.
+
+## Seguridad
+El PIN de `/staff/` (constante `CONFIG` en `staff/app.js`) es solo una barrera ligera en el navegador. Serie, motor y ubicación están en `data/inventory.json`, que es público. Para protegerlos de verdad, moverlos tras una Netlify Function.

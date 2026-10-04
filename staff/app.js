@@ -15,7 +15,7 @@ document.body.classList.toggle("staff", staff);
 
 const unitsOf = slug => DB.units.filter(u => u.model === slug);
 const modelBy = slug => DB.models.find(m => m.slug === slug);
-const photosOf = m => { const p = (MODELS[m.slug] || {}).photos || []; return p.length ? p : [`photos/${m.slug}.jpg`]; };
+const photosOf = m => { const p = (MODELS[m.slug] || {}).photos || []; return p.length ? p : [`../photos/${m.slug}.jpg`]; };
 function ph(m, i = 0) {
   return `<div class="ph" style="position:relative">${esc(m.brand.slice(0, 1) + m.brand.slice(1, 2).toLowerCase())}<img src="${esc(photosOf(m)[i])}" alt="${esc(m.name)}" style="position:absolute;inset:0" onerror="this.remove()"></div>`;
 }
@@ -104,7 +104,7 @@ function viewScan() {
   $("#app").innerHTML = `<h2>Escanear QR</h2><div id="reader"></div><p class="hint" style="text-align:center">Apunta a la etiqueta de la moto. Si no hay cámara, escribe el inventario:</p>
   <div class="row" style="max-width:420px;margin:auto"><input id="manual" placeholder="Ej. 1600-226"><button id="go" style="flex:0 0 auto">Buscar</button></div>`;
   const go = txt => {
-    const mt = txt.match(/#\/u\/([^\s/]+)/); const id = decodeURIComponent(mt ? mt[1] : txt.trim());
+    const mt = txt.match(/[?&]u=([^&\s]+)/) || txt.match(/#\/u\/([^\s/]+)/); const id = decodeURIComponent(mt ? mt[1] : txt.trim());
     const u = DB.units.find(x => x.id.toLowerCase() === id.toLowerCase() || x.inv.toLowerCase() === id.toLowerCase());
     if (!u) return alert("No encontré esa unidad: " + id);
     stopScanner(); location.hash = "#/u/" + encodeURIComponent(u.id);
@@ -121,7 +121,7 @@ function viewLabels() {
   const draw = () => {
     const f = $("#lf").value, base = location.origin + location.pathname.replace(/index\.html$/, "");
     $("#labels").innerHTML = DB.units.filter(u => !f || u.location === f).map(u => {
-      const qr = qrcode(0, "M"); qr.addData(base + "#/u/" + encodeURIComponent(u.id)); qr.make();
+      const qr = qrcode(0, "M"); qr.addData(base + "moto/" + u.model + "/?u=" + encodeURIComponent(u.id)); qr.make();
       return `<div class="label">${qr.createSvgTag({ scalable: true })}<div><b>${esc(u.inv)}</b></div><div>${esc(modelBy(u.model).name)} · ${esc(u.color)}</div></div>`;
     }).join("");
   };
@@ -153,6 +153,6 @@ function route() {
   else viewCatalog();
 }
 addEventListener("hashchange", route);
-Promise.all([fetch("data/inventory.json").then(r => r.json()), fetch("data/models.json").then(r => r.json()).catch(() => ({}))])
+Promise.all([fetch("../data/inventory.json").then(r => r.json()), fetch("../data/models.json").then(r => r.json()).catch(() => ({}))])
   .then(([d, m]) => { DB = d; MODELS = m; route(); })
   .catch(() => $("#app").innerHTML = `<p class="empty">No se pudo cargar el inventario.</p>`);

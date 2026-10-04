@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#e31e24">
+<title>Personal · Assisa Motors</title>
+<meta name="description" content="Catálogo de motos, motonetas, cuatrimotos y más en Assisa Motors.">
+<link rel="icon" href="../logo.svg">
+<link rel="stylesheet" href="staff.css">
+</head>
+<body>
+<header class="top">
+  <a href="#/" class="logo" aria-label="Assisa Motors"><img src="../logo.svg" alt="Assisa Motors"></a>
+  <nav>
+    <a href="#/" data-nav="catalog">Catálogo</a>
+    <a href="/" data-nav="web">Sitio público</a>
+    <a href="#/escanear" data-nav="escanear" class="staff-only">Escanear QR</a>
+    <a href="#/qr" data-nav="qr" class="staff-only">Etiquetas</a>
+    <button id="staffBtn" class="ghost">Personal</button>
+  </nav>
+</header>
+<main id="app"></main>
+<div id="modal" class="modal" hidden></div>
+<footer class="foot"><img src="../logo.svg" alt=""><p>Assisa Motors · Catálogo sujeto a disponibilidad. Precios y especificaciones pueden cambiar sin previo aviso.</p></footer>
+<script src="../vendor/html5-qrcode.min.js" defer></script>
+<script src="../vendor/qrcode.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
