@@ -103,12 +103,14 @@ def header():
     return f'''<a class="skip" href="#main">Saltar al contenido</a>
 <header class="top"><div class="wrap bar"><a href="/" class="logo" aria-label="{E(NAME)} - Inicio"><img src="/logo.svg" alt="{E(NAME)}" width="150" height="38"></a>
 <nav aria-label="Principal"><a href="/#catalogo">Catálogo</a><a href="/financiamiento/">Financiamiento</a><a href="/servicios/">Taller y refacciones</a><a href="/#visitanos">Ubicación</a></nav>{cta}</div></header>'''
+WA_ICO = '<svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.7.7.7-2.6-.2-.4A8 8 0 0 1 12 4z"/><path fill="#fff" d="M8.7 7.6c.3-.5.8-.5 1.1-.1l.8 1.4c.2.4.1.8-.2 1.1l-.5.5c.6 1.2 1.6 2.2 2.8 2.8l.5-.5c.3-.3.7-.4 1.1-.2l1.4.8c.4.3.4.8 0 1.2-.7.9-1.6 1.2-2.5 1-2.9-.8-5-3-5.8-5.8-.2-.9.1-1.8.3-2.2z"/></svg>'
+MAP_ICO = '<svg class="gi" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ea4335" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><path fill="#fbbc04" d="M12 2a7 7 0 0 0-5.6 2.8L12 11z"/><path fill="#34a853" d="M17.6 4.8A7 7 0 0 1 19 9c0 1.4-.5 3-1.2 4.5L12 11z"/><path fill="#4285f4" d="M5 9c0 1.4.5 3 1.2 4.5L12 11 6.4 4.8A7 7 0 0 0 5 9z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg>'
+
 def dock():
-    items = [(f'<a href="tel:{TEL}">{icon("phone")}<span>Llamar</span></a>' if B.get("phone") else ""),
-             (f'<a class="wa" href="{E(wa("Hola, quiero información de una moto"))}" rel="noopener">{icon("chat")}<span>WhatsApp</span></a>' if wa() else ""),
-             f'<a href="{E(MAPS)}" target="_blank" rel="noopener">{icon("pin")}<span>Cómo llegar</span></a>']
-    return (f'<div class="fab" id="fab"><div class="fab-menu" id="fabMenu" hidden>{"".join(items)}</div>'
-            f'<button class="fab-btn" id="fabBtn" aria-expanded="false" aria-controls="fabMenu" aria-label="Contactar a {E(NAME)}">{icon("chat")}<span>Contáctanos</span></button></div>')
+    items = [f'<a class="g-map" href="{E(MAPS)}" target="_blank" rel="noopener" aria-label="Cómo llegar en Google Maps" title="Cómo llegar">{MAP_ICO}<span>Cómo llegar</span></a>',
+             (f'<a class="g-wa" href="{E(wa("Hola, quiero información de una moto"))}" rel="noopener" aria-label="Escribir por WhatsApp" title="WhatsApp">{WA_ICO}<span>WhatsApp</span></a>' if wa() else ""),
+             (f'<a class="g-tel" href="tel:{TEL}" aria-label="Llamar por teléfono" title="Llamar">{icon("phone")}<span>Llamar</span></a>' if B.get("phone") else "")]
+    return '<nav class="gbar" aria-label="Contacto rápido">' + "".join(items) + "</nav>"
 
 def footer():
     contact = "".join(f"<li>{x}</li>" for x in [E(B["address"]) if B["address"] else "", f'<a href="tel:{TEL}">{E(B["phone"])}</a>' if B["phone"] else "", E(B["hours"]) if B["hours"] else ""] if x)

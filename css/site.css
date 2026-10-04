@@ -86,17 +86,13 @@ input,select{font:inherit;padding:13px 16px;border:1px solid var(--line);border-
 .check{list-style:none;padding:0;margin:14px 0}.check li{padding:9px 0 9px 30px;position:relative;border-bottom:1px solid var(--line)}.check li:before{content:"✓";position:absolute;left:4px;color:var(--red);font-weight:800}
 .chead .fcard{margin:0}
 
-.fab{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
-.fab-btn{display:flex;align-items:center;gap:8px;background:var(--red);color:#fff;border:0;border-radius:99px;padding:14px 18px 14px 16px;font:700 15px Inter,sans-serif;cursor:pointer;box-shadow:0 10px 26px #e31e2466;animation:pulse 2.6s infinite}
-.fab-btn .ico{width:22px;height:22px}.fab-btn[aria-expanded=true]{background:var(--navy);animation:none}
-@keyframes pulse{0%,100%{box-shadow:0 10px 26px #e31e2466,0 0 0 0 #e31e2455}60%{box-shadow:0 10px 26px #e31e2466,0 0 0 14px #e31e2400}}
-.fab-menu{display:flex;flex-direction:column;gap:8px}.fab-menu[hidden]{display:none}
-.fab-menu a{display:flex;align-items:center;gap:10px;background:#fff;color:var(--navy);border:1px solid var(--line);border-radius:99px;padding:11px 18px 11px 14px;font:600 15px Inter,sans-serif;text-decoration:none;box-shadow:0 8px 22px #0b1b3b2e;animation:pop .18s ease-out both}
-.fab-menu a:nth-child(2){animation-delay:.04s}.fab-menu a:nth-child(3){animation-delay:.08s}
-.fab-menu a .ico{width:22px;height:22px;color:var(--red)}.fab-menu a.wa{background:#18a957;color:#fff;border-color:#18a957}.fab-menu a.wa .ico{color:#fff}
-@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.96)}}
-@media(max-width:420px){.fab-btn span{display:none}.fab-btn{padding:15px}}
+.gbar{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:60;display:flex;flex-direction:column;gap:10px}
+.gbar a{display:flex;align-items:center;gap:10px;height:56px;min-width:56px;padding:0 16px 0 14px;border-radius:99px;text-decoration:none;font:700 15px Inter,sans-serif;color:#fff;box-shadow:0 8px 22px #0b1b3b40,0 0 0 3px #fff;transition:transform .15s}
+.gbar a:hover{transform:scale(1.05)}.gbar .gi,.gbar .ico{width:28px;height:28px;flex:0 0 auto}
+.g-wa{background:#25d366}.g-tel{background:var(--navy)}.g-map{background:#fff;color:var(--navy)!important;box-shadow:0 8px 22px #0b1b3b40,0 0 0 3px var(--line)!important}
+@media(max-width:700px){.gbar a{padding:0;justify-content:center;width:56px}.gbar a span{display:none}}
 .loc .btn-light,.finband .btn-light{color:var(--navy)}.finband .btn-light{color:var(--red)}
 @media(max-width:860px){.hart{width:100%}}
 /* Oculta la barra flotante de Netlify (solo la ven usuarios con sesión de Netlify) para que no tape el contacto */
 netlify-drawer,#netlify-drawer,[class*="netlify-drawer"],iframe[src*="netlify.app/.netlify/drawer"]{display:none!important}
+@media(min-width:701px){.gbar{left:auto;right:16px;bottom:auto;top:50%;transform:translateY(-50%)}.gbar a{padding:0;justify-content:center;width:56px}.gbar a span{display:none}}

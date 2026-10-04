@@ -1,12 +1,4 @@
 (() => {
-  // ---- Burbuja de contacto ----
-  const fb = document.getElementById("fabBtn"), fm = document.getElementById("fabMenu");
-  if (fb && fm) {
-    const set = open => { fm.hidden = !open; fb.setAttribute("aria-expanded", open); };
-    fb.onclick = e => { e.stopPropagation(); set(fm.hidden); };
-    document.addEventListener("click", e => { if (!fm.hidden && !fm.contains(e.target)) set(false); });
-    document.addEventListener("keydown", e => { if (e.key === "Escape") set(false); });
-  }
   const $ = (s, e = document) => e.querySelector(s), $$ = (s, e = document) => [...e.querySelectorAll(s)];
   const money = n => n ? "$" + Number(n).toLocaleString("es-MX") + " MXN" : "Consultar precio";
   // ---- Catálogo: filtros ----
