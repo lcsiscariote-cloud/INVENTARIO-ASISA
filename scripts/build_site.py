@@ -8,6 +8,7 @@ P = lambda *a: os.path.join(ROOT, *a)
 B = json.load(open(P("data", "business.json")))
 DB = json.load(open(P("data", "inventory.json")))
 MODELS = json.load(open(P("data", "models.json")))
+PH = json.load(open(P("data", "photos.json"))) if os.path.exists(P("data", "photos.json")) else {}
 E = lambda s: html.escape(str(s if s is not None else ""), quote=True)
 SITE = B["siteUrl"].rstrip("/")
 NAME, CITY = B["name"], f'{B["city"]}, Gto.'
@@ -39,11 +40,13 @@ for m in DB["models"]:
     cat = art.categorize(m["brand"], m["name"])
     photos = sorted(glob.glob(P("photos", m["slug"] + ".*")) + glob.glob(P("photos", m["slug"] + "-*.*")))
     photos = [os.path.basename(x) for x in photos if not x.endswith(".gitkeep")] + list(MODELS.get(m["slug"], {}).get("photos", []))
+    psets = ([{"color": "", "urls": photos}] if photos else []) + PH.get(m["slug"], [])
+    photos = [u for s_ in psets for u in s_["urls"]]
     opts = {}
     for u in us: opts.setdefault((u["color"], u["year"], u["price"]), []).append(u["id"])
     ms.append(dict(m, title=nice(m["name"]), cat=cat, pmin=min(prices) if prices else None, pmax=max(prices) if prices else None,
         colors=sorted({u["color"] for u in us if u["color"]}), years=sorted({u["year"] for u in us if u["year"]}, reverse=True),
-        photos=photos, opts=opts, info=MODELS.get(m["slug"], {})))
+        photos=photos, psets=psets, opts=opts, info=MODELS.get(m["slug"], {})))
 ms.sort(key=lambda m: (m["brand"], m["title"]))
 BRANDS = sorted({m["brand"] for m in ms}); CATS = [c for c in art.NAMES if any(m["cat"] == c for m in ms)]
 cnt = lambda f: sum(1 for m in ms if f(m))
@@ -73,17 +76,41 @@ def term_bar():
     pts = "".join(f'<li style="left:{(t-T0)/(T1-T0)*100:.0f}%"><i></i><b>{t}</b><span>meses</span></li>' for t in sorted({T0, 12, 18, T1}) if T0 <= t <= T1)
     return f'<div class="terms" aria-label="Plazos de {T0} a {T1} meses"><div class="track"></div><ul>{pts}</ul></div>'
 
+def normc(x): return re.sub(r"[^a-z0-9]+", "-", __import__("unicodedata").normalize("NFKD", (x or "").lower()).encode("ascii", "ignore").decode()).strip("-")
 def purl(p, w=None):
-    """URL de foto: archivo local (photos/) o URL externa (p. ej. ImageKit, con redimensionado y WebP automáticos)."""
+    """URL de foto: archivo local (photos/) o URL externa (ImageKit: redimensionado y WebP automáticos)."""
     if p.startswith("http"):
         return p + (("&" if "?" in p else "?") + f"tr=w-{w},f-auto,q-80") if w and "imagekit.io" in p else p
     return "/photos/" + os.path.basename(p)
-
+def absu(p): return p if p.startswith("http") else SITE + purl(p)
+def set_for(m, color):
+    """Fotos que corresponden a un color del inventario (None si no hay)."""
+    i = normc(color)
+    for st in m["psets"]:
+        q = normc(st["color"])
+        if not q: return st["urls"]
+        if i and (q == i or q.startswith(i + "-") or i.startswith(q + "-")): return st["urls"]
+    return None
+def cover_urls(m):
+    for c in (m["colors"] or [""]):
+        u = set_for(m, c)
+        if u: return u
+    return m["psets"][0]["urls"] if m["psets"] else []
+def pimg(u, alt, w=600):
+    return f'<div class="pimg"><img class="pbg" src="{E(purl(u, 48))}" alt="" aria-hidden="true"><img class="photo" src="{E(purl(u, w))}" alt="{E(alt)}" loading="lazy" decoding="async"></div>'
 def visual(m, cls="art"):
-    if m["photos"]: return f'<img class="photo" src="{E(purl(m["photos"][0], 600))}" alt="{E(m["brand"]+" "+m["title"])} en {E(CITY)}" loading="lazy">'
+    u = cover_urls(m)
+    if u: return pimg(u[0], f'{m["brand"].title()} {m["title"]} en {CITY}')
     return art.svg(m["cat"], hexof(m["colors"][0] if m["colors"] else ""), cls)
+def og_img(m):
+    u = cover_urls(m)
+    return (u[0] + "?tr=w-1200,h-630,cm-pad_resize,bg-0B1B3B" if "imagekit.io" in u[0] else absu(u[0])) if u else None
+def tile_art(c, i):
+    m = next((x for x in ms if x["cat"] == c and cover_urls(x)), None)
+    if m: return f'<div class="tart tph">{pimg(cover_urls(m)[0], art.NAMES[c], 500)}</div>'
+    return f'<div class="tart">{art.svg(c, ["#e31e24","#1d4fa3"][i % 2])}</div>'
 
-def head(title, desc, path, extra="", og=True, robots="index,follow"):
+def head(title, desc, path, extra="", image=None, robots="index,follow"):
     url = SITE + path; desc = desc.replace("Gto..", "Gto."); title = title.replace("Gto..", "Gto.")
     return f'''<!doctype html>
 <html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -91,7 +118,7 @@ def head(title, desc, path, extra="", og=True, robots="index,follow"):
 <link rel="canonical" href="{E(url)}"><meta name="theme-color" content="#0b1b3b"><link rel="icon" href="/logo.svg" type="image/svg+xml">
 <meta property="og:type" content="website"><meta property="og:locale" content="es_MX"><meta property="og:site_name" content="{E(NAME)}">
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{E(url)}">
-<meta property="og:image" content="{SITE}/og.png"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="{E(image or SITE + "/og.png")}"><meta name="twitter:card" content="summary_large_image">
 <meta name="geo.region" content="MX-GUA"><meta name="geo.placename" content="{E(B["city"])}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -123,7 +150,7 @@ def footer():
 {dock()}<script src="/js/site.js" defer></script></body></html>'''
 
 def card(m):
-    pr = f'<div class="price"><small>Desde</small> {money(m["pmin"])}</div>' if m["pmin"] else '<div class="price ask">Consultar precio</div>'
+    pr = f'<div class="price"><small>Desde</small> {money(m["pmin"]).replace(" MXN", "")}</div>' if m["pmin"] else '<div class="price ask">Consultar precio</div>'
     sw = "".join(f'<i title="{E(c)}" style="background:{hexof(c)}"></i>' for c in m["colors"])
     hay = " ".join([m["brand"], m["title"], art.NAMES[m["cat"]], *m["colors"], *map(str, m["years"])]).lower()
     return f'''<a class="card" href="/moto/{m["slug"]}/" data-cat="{m["cat"]}" data-brand="{E(m["brand"])}" data-price="{m["pmin"] or 0}" data-name="{E(m["title"])}" data-q="{E(hay)}">
@@ -151,7 +178,7 @@ def home():
     n_models, n_units = len(ms), len(DB["units"])
     chips = '<button class="chip on" data-f="cat" data-v="">Todas</button>' + "".join(f'<button class="chip" data-f="cat" data-v="{c}">{E(art.NAMES[c])} <small>{cnt(lambda m: m["cat"] == c)}</small></button>' for c in CATS)
     bchips = '<button class="chip on" data-f="brand" data-v="">Todas las marcas</button>' + "".join(f'<button class="chip" data-f="brand" data-v="{E(b)}">{E(b.title())} <small>{cnt(lambda m: m["brand"] == b)}</small></button>' for b in BRANDS)
-    tiles = "".join(f'<a class="tile" href="/categoria/{CAT_SLUG[c]}/"><div class="tart">{art.svg(c, ["#e31e24","#1d4fa3"][i % 2])}</div><h3>{E(art.NAMES[c])}</h3><p>{cnt(lambda m: m["cat"] == c)} modelos</p></a>' for i, c in enumerate(CATS))
+    tiles = "".join(f'<a class="tile" href="/categoria/{CAT_SLUG[c]}/">{tile_art(c, i)}<h3>{E(art.NAMES[c])}</h3><p>{cnt(lambda m: m["cat"] == c)} modelos</p></a>' for i, c in enumerate(CATS))
     show = [("deportiva", "#f2f5f9"), ("cuatrimoto", "#f4c20d"), ("motoneta", "#2a6ad4"), ("cross", "#f2f5f9")]
     hero_art = "".join(f'<div class="slide" style="animation-delay:{-2-i*5}s">{art.svg(c, col)}</div>' for i, (c, col) in enumerate(show) if c in CATS)
     cta = (f'<a class="btn btn-red" href="{E(wa("Hola, quiero información de una moto"))}" rel="noopener">Cotizar por WhatsApp</a>' if wa() else "") + '<a class="btn btn-light" href="#catalogo">Ver catálogo</a>'
@@ -199,12 +226,23 @@ def home():
 
 def model_page(m):
     name = f'{m["brand"].title()} {m["title"]}'
-    opts = "".join(f'<button class="opt{" on" if i == 0 else ""}" data-hex="{hexof(c)}" data-year="{y or ""}" data-price="{p or ""}" data-ids="{E(",".join(ids))}" data-color="{E(c)}"><i style="background:{hexof(c)}"></i>{E(c or "—")}{f" · {y}" if y else ""}</button>'
-                   for i, ((c, y, p), ids) in enumerate(m["opts"].items()))
-    first = next(iter(m["opts"]))
+    olist = list(m["opts"].items())
+    gal = [set_for(m, c) or [] for (c, y, p), ids in olist]
+    init = next((i for i, g in enumerate(gal) if g), 0)
+    opts = "".join(f'<button class="opt{" on" if i == init else ""}" data-i="{i}" data-hex="{hexof(c)}" data-year="{y or ""}" data-price="{p or ""}" data-ids="{E(",".join(ids))}" data-color="{E(c)}"><i style="background:{hexof(c)}"></i>{E(c or "—")}{f" · {y}" if y else ""}</button>'
+                   for i, ((c, y, p), ids) in enumerate(olist))
+    first = olist[init][0]
     specs = {"Marca": m["brand"].title(), "Tipo": CAT_SING[m["cat"]], "Colores": ", ".join(c.title() for c in m["colors"]) or "Consultar", "Año modelo": ", ".join(map(str, m["years"])) or "Consultar", **m["info"].get("specs", {})}
     desc_txt = m["info"].get("description") or f'{name} es {("una " if m["cat"] in ("motocicleta","deportiva","motoneta","cuatrimoto") else "un ")}{CAT_SING[m["cat"]].lower()} disponible en {NAME}, {CITY}'.rstrip(".") + "." + (f' Colores: {", ".join(c.lower() for c in m["colors"])}.' if m["colors"] else "") + (f' Precio desde {money(m["pmin"])}.' if m["pmin"] else "")
-    gallery = f'<div class="stage big" id="stage" data-cat="{m["cat"]}">{visual(m, "art")}</div>' + ("".join(f'<img class="th" src="{E(purl(p, 200))}" alt="" loading="lazy">' for p in m["photos"][1:]))
+    g0 = gal[init]; alt = f"{name} {olist[init][0][0].lower()} en {CITY}".replace("  ", " ")
+    thumbs = "".join('<button class="thb" data-k="%d"><img src="%s" alt="" loading="lazy"></button>' % (k, E(purl(u, 160))) for k, u in enumerate(g0)) if len(g0) > 1 else ""
+    galjson = json.dumps(gal).replace("</", "<\\/")
+    main_html = pimg(g0[0], alt, 900) if g0 else ""
+    gallery = (f'<div class="stage big" id="stage" data-cat="{m["cat"]}"><div class="artwrap"{" hidden" if g0 else ""}>{art.svg(m["cat"], hexof(first[0]))}</div>'
+               f'<button class="pmain" id="pmain" aria-label="Ampliar foto"{"" if g0 else " hidden"}>{main_html}</button></div>'
+               f'<div class="thumbs" id="thumbs">{thumbs}</div>'
+               f'<p class="gnote" id="gnote"{" hidden" if g0 else ""}>Foto de este color próximamente. Imagen ilustrativa.</p>'
+               f'<script type="application/json" id="galdata">{galjson}</script>')
     related = [r for r in ms if r["cat"] == m["cat"] and r["slug"] != m["slug"]][:4] or [r for r in ms if r["slug"] != m["slug"]][:4]
     price = f'<span id="price">{money(first[2])}</span>' if first[2] else '<span id="price">Consultar precio</span>'
     ctas = (f'<a class="btn btn-red" href="{E(wa(f"Hola, me interesa la {name}"))}" rel="noopener">Cotizar por WhatsApp</a>' if wa() else f'<a class="btn btn-red" href="{E(MAPS)}" target="_blank" rel="noopener">Cómo llegar a la tienda</a>') + (f'<a class="btn btn-light" href="{E(m["url"])}" target="_blank" rel="noopener nofollow">Sitio del fabricante</a>' if m.get("url") else "")
@@ -219,13 +257,13 @@ def model_page(m):
 <section class="sec"><div class="sh"><h2>También te puede interesar</h2></div><div class="grid">{"".join(card(r) for r in related)}</div></section></div></main>'''
     prod = {"@context": "https://schema.org", "@type": "Product", "name": name, "brand": {"@type": "Brand", "name": m["brand"].title()}, "category": CAT_SING[m["cat"]], "description": desc_txt,
         "url": f'{SITE}/moto/{m["slug"]}/', **({"color": ", ".join(m["colors"])} if m["colors"] else {}),
-        **({"image": [p if p.startswith("http") else f'{SITE}{purl(p)}' for p in m["photos"]]} if m["photos"] else {"image": SITE + "/og.png"}),
+        **({"image": [absu(p) for p in m["photos"]]} if m["photos"] else {"image": SITE + "/og.png"}),
         **({"offers": {"@type": "AggregateOffer", "priceCurrency": "MXN", "lowPrice": m["pmin"], "highPrice": m["pmax"], "offerCount": len(m["opts"]), "availability": "https://schema.org/InStock",
             "seller": {"@id": SITE + "/#dealer"}}} if m["pmin"] else {})}
     bc = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate([("Inicio", SITE + "/"), (art.NAMES[m["cat"]], f'{SITE}/categoria/{CAT_SLUG[m["cat"]]}/'), (name, f'{SITE}/moto/{m["slug"]}/')])]}
     t = f'{name} en {CITY} | Precio y colores | {NAME}'
     d = f'{name}: {CAT_SING[m["cat"]].lower()} en {CITY}.' + (f' Desde {money(m["pmin"])}.' if m["pmin"] else "") + (f' Colores: {", ".join(c.lower() for c in m["colors"])}.' if m["colors"] else "") + f' Cotiza en {NAME}.'
-    return head(t, d[:300], f'/moto/{m["slug"]}/', ld(prod) + ld(bc)) + header() + body + footer()
+    return head(t, d[:300], f'/moto/{m["slug"]}/', ld(prod) + ld(bc), image=og_img(m)) + header() + body + footer()
 
 def cat_page(c):
     lst = [m for m in ms if m["cat"] == c]; pr = [m["pmin"] for m in lst if m["pmin"]]

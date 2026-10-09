@@ -79,7 +79,7 @@ def categorize(brand, name):
     n = name.upper()
     if any(k in n for k in ("ELECTRIC",)): return "electrico"
     if any(k in n for k in ("MOTOCARRO","RAMPANTE","APE ","CARGO","DZ200Q1")): return "carga"
-    if "MONETA" in n or "SCALA" in n: return "motoneta"
+    if "MOTONETA" in n or "SCALA" in n or "BUFFY" in n: return "motoneta"
     if "DEPORTIVA" in n or "NINJA 160" in n: return "deportiva"
     if any(k in n for k in ("MINICROSS","POCKET","CROSSTAR","CROSS PRO","R8 MINI","CROSS ")): return "cross"
     if n.startswith("Q") or "ATV" in n or "UTV" in n or "CUATRI" in n or "AMAROK" in n or "AMAX" in n or "GO KART" in n: return "cuatrimoto"

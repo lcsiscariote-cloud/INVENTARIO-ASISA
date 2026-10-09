@@ -10,12 +10,13 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": 
 const money = n => n == null ? "Consultar" : "$" + n.toLocaleString("es-MX");
 const COLORS = { ROJO: "#d02030", AZUL: "#1f5fbf", NEGRO: "#1a1a1a", BLANCO: "#f4f4f4", VERDE: "#2e9a4d", NARANJA: "#f28c1b", AMARILLO: "#f4c20d", ROSA: "#ee7fb0", GRIS: "#8a9099", "AZUL CIELO": "#6cc0ee" };
 const dot = c => `<span class="dot" title="${esc(c)}" style="background:${COLORS[c] || COLORS[c.split(/[ /]/)[0]] || "#999"}"></span>`;
-let staff = sessionStorage.getItem("staff") === "1", DB, MODELS = {};
+let staff = sessionStorage.getItem("staff") === "1", DB, MODELS = {}, PHOTOS = {};
 document.body.classList.toggle("staff", staff);
 
 const unitsOf = slug => DB.units.filter(u => u.model === slug);
 const modelBy = slug => DB.models.find(m => m.slug === slug);
-const photosOf = m => { const p = (MODELS[m.slug] || {}).photos || []; return p.length ? p : [`../photos/${m.slug}.jpg`]; };
+const ik = u => /imagekit\.io/.test(u) ? u + "?tr=w-700,f-auto,q-80" : u;
+const photosOf = m => { const sets = PHOTOS[m.slug] || []; if (sets.length) return sets.flatMap(x => x.urls).map(ik); const p = (MODELS[m.slug] || {}).photos || []; return p.length ? p : [`../photos/${m.slug}.jpg`]; };
 function ph(m, i = 0) {
   return `<div class="ph" style="position:relative">${esc(m.brand.slice(0, 1) + m.brand.slice(1, 2).toLowerCase())}<img src="${esc(photosOf(m)[i])}" alt="${esc(m.name)}" style="position:absolute;inset:0" onerror="this.remove()"></div>`;
 }
@@ -153,6 +154,6 @@ function route() {
   else viewCatalog();
 }
 addEventListener("hashchange", route);
-Promise.all([fetch("../data/inventory.json").then(r => r.json()), fetch("../data/models.json").then(r => r.json()).catch(() => ({}))])
-  .then(([d, m]) => { DB = d; MODELS = m; route(); })
+Promise.all([fetch("../data/inventory.json").then(r => r.json()), fetch("../data/models.json").then(r => r.json()).catch(() => ({})), fetch("../data/photos.json").then(r => r.json()).catch(() => ({}))])
+  .then(([d, m, ph]) => { DB = d; MODELS = m; PHOTOS = ph; route(); })
   .catch(() => $("#app").innerHTML = `<p class="empty">No se pudo cargar el inventario.</p>`);

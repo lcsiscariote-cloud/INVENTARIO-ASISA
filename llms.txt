@@ -20,7 +20,6 @@ Sitio: https://inventario-asisa-motos.netlify.app/
 
 ## Motocicletas
 
-- [Avanzada A5*180 MOTONETA](https://inventario-asisa-motos.netlify.app/moto/avanzada-a5-180-motoneta/) — desde $28,500 MXN; colores: azul, azul cielo, blanco, naranja, rojo, rosa
 - [Avanzada LF150-10B(KP)](https://inventario-asisa-motos.netlify.app/moto/avanzada-lf150-10b-kp/) — desde $30,000 MXN
 - [Avanzada M200-AZ ARISE](https://inventario-asisa-motos.netlify.app/moto/avanzada-m200-az-arise/) — desde $73,000 MXN; colores: azul
 - [Avanzada M200-BL ARISE](https://inventario-asisa-motos.netlify.app/moto/avanzada-m200-bl-arise/) — desde $73,000 MXN; colores: blanco
@@ -42,6 +41,7 @@ Sitio: https://inventario-asisa-motos.netlify.app/
 
 ## Motonetas
 
+- [Avanzada A5*180 MOTONETA](https://inventario-asisa-motos.netlify.app/moto/avanzada-a5-180-motoneta/) — desde $28,500 MXN; colores: azul, azul cielo, blanco, naranja, rojo, rosa
 - [Treck SCALA 125CC](https://inventario-asisa-motos.netlify.app/moto/treck-scala-125cc/) — desde $28,000 MXN; colores: rojo
 
 ## Cuatrimotos y UTV

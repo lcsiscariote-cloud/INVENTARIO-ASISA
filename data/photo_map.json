@@ -1,0 +1,22 @@
+{
+  "_nota": "Une el modelo_slug del CSV de fotos con el/los slug(s) del inventario (data/inventory.json). 'aliases' renombra el color de las fotos para que coincida con el color del inventario.",
+  "avanzada-a6-180": {"to": ["avanzada-a6-180-motocicleta-deportiva"]},
+  "avanzada-amarok-250": {"to": ["avanzada-atv250ak-amarok"]},
+  "avanzada-amarok-300": {"to": ["avanzada-2021-amarok-300-atv300am"]},
+  "avanzada-amax-250": {"to": ["avanzada-amax250ro"]},
+  "avanzada-atv-400-wanderer": {"to": ["avanzada-2022-cuatrimoto-atv400ro"]},
+  "avanzada-buffy-a5-180": {"to": ["avanzada-a5-180-motoneta"]},
+  "avanzada-mini-cross": {"to": ["avanzada-minicross"]},
+  "avanzada-q5-50": {"to": ["avanzada-q5-50"], "aliases": {"multicolor": "amarillo"}},
+  "avanzada-q9-200-raptor": {"to": ["avanzada-q9-200-raptor"]},
+  "avanzada-r8-mini": {"to": ["avanzada-r8-mini-pista"]},
+  "avanzada-utv-alfa": {"to": ["avanzada-utv-alfa"]},
+  "lifan-110-tp": {"to": ["lifan-lifan-110cc-tp"], "aliases": {"negro-rojo": "rojo"}},
+  "lifan-lf-150": {"to": ["lifan-lf-150-kp-naranaja"]},
+  "lifan-lf-200": {"to": ["lifan-lf200-fr200"]},
+  "lifan-semiautomatica-125": {"to": ["lifan-lf-125-ar125"], "aliases": {"gris-amarillo": "amarillo"}},
+  "tank-hurricane-150": {"to": ["tank-tk150-7-hurricane-150-cc"]},
+  "treck-element-160": {"to": ["treck-element"]},
+  "treck-pocket": {"to": ["treck-pocket"]},
+  "treck-trazo-150": {"to": ["treck-trazo-racer"]}
+}

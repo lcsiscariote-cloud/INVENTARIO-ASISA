@@ -96,3 +96,20 @@ input,select{font:inherit;padding:13px 16px;border:1px solid var(--line);border-
 /* Oculta la barra flotante de Netlify (solo la ven usuarios con sesión de Netlify) para que no tape el contacto */
 netlify-drawer,#netlify-drawer,[class*="netlify-drawer"],iframe[src*="netlify.app/.netlify/drawer"]{display:none!important}
 @media(min-width:701px){.gbar{left:auto;right:16px;bottom:auto;top:50%;transform:translateY(-50%)}.gbar a{padding:0;justify-content:center;width:56px}.gbar a span{display:none}}
+
+/* ===== Fotos reales ===== */
+.pimg{position:absolute;inset:0;overflow:hidden;background:#dfe6f2}
+.pbg{position:absolute;inset:-12%;width:124%;height:124%;object-fit:cover;filter:blur(24px) saturate(1.15);opacity:.7}
+.pimg img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:transform .35s}
+.card:hover .stage img.photo{transform:scale(1.05)}
+.card .stage{aspect-ratio:1/1;padding:0}.card .stage svg{padding:8%;height:100%;object-fit:contain}
+.tph{position:relative;aspect-ratio:4/3;overflow:hidden;padding:0}
+.gal .stage.big{aspect-ratio:1/1;padding:0;position:relative;overflow:hidden}.gal .stage.big .artwrap{width:100%;padding:28px 24px 10px}.artwrap[hidden],.pmain[hidden],.gnote[hidden]{display:none}
+.pmain{position:absolute;inset:0;border:0;padding:0;background:none;cursor:zoom-in;display:block;width:100%;height:100%}
+.thumbs{display:flex;gap:8px;margin-top:10px;overflow-x:auto;scrollbar-width:none}.thumbs::-webkit-scrollbar{display:none}
+.thb{flex:0 0 auto;width:76px;height:76px;border:2px solid transparent;border-radius:12px;padding:0;overflow:hidden;background:#e5ebf5;cursor:pointer}.thb img{width:100%;height:100%;object-fit:cover;display:block}.thb.on{border-color:var(--red)}
+.gnote{font-size:13px;color:var(--mut);margin:10px 2px 0}
+.lb{position:fixed;inset:0;z-index:100;background:#050b18f2;display:flex;align-items:center;justify-content:center}.lb[hidden]{display:none}
+.lb img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:8px}.lb button{position:absolute;background:#ffffff22;color:#fff;border:0;width:48px;height:48px;border-radius:50%;font-size:30px;line-height:1;cursor:pointer}
+.lb-x{top:16px;right:16px}.lb-p{left:12px;top:50%}.lb-n{right:12px;top:50%}.lb button:hover{background:#ffffff44}
+@media(min-width:861px){.gal{position:sticky;top:84px}}

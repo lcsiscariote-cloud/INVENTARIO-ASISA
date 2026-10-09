@@ -25,6 +25,11 @@ Para aparecer de verdad: llena `data/business.json`, crea/verifica tu **Perfil d
 ## Seguridad
 El PIN de `/staff/` (constante `CONFIG` en `staff/app.js`) es solo una barrera ligera en el navegador. Serie, motor y ubicación están en `data/inventory.json`, que es público. Para protegerlos de verdad, moverlos tras una Netlify Function.
 
-## Fotos: dos opciones
-- **Simple (recomendada para empezar):** guarda `photos/<slug>.jpg` en el repo; Netlify las sirve desde su CDN.
-- **ImageKit (u otro CDN):** sube las fotos allá y pega las URLs en `data/models.json`, p. ej. `"avanzada-q6-110cr": {"photos": ["https://ik.imagekit.io/tu_id/q6.jpg"]}`. Con ImageKit el sitio pide automáticamente versiones reducidas y en WebP. Después corre `python3 scripts/build_site.py`.
+## Fotos
+Las fotos viven en ImageKit y se enlazan por URL:
+1. `data/urls_imagenes.csv` — lista de fotos (modelo, color, URL) exportada del chat de WhatsApp.
+2. `data/photo_map.json` — une cada `modelo_slug` del CSV con el/los modelos del inventario (y renombra colores con `aliases`).
+3. `python3 scripts/import_photos.py` → genera `data/photos.json` (fotos por modelo y color; avisa de lo que no encontró).
+4. `python3 scripts/build_site.py` → regenera el sitio. En la ficha, al elegir un color cambia la galería; si ese color no tiene fotos se muestra la ilustración con "Foto de este color próximamente".
+
+Alternativa manual: `photos/<slug>.jpg` en el repo, o URLs en `data/models.json` → `"photos": [...]`.
