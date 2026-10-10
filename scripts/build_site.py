@@ -238,10 +238,12 @@ def model_page(m):
     thumbs = "".join('<button class="thb" data-k="%d"><img src="%s" alt="" loading="lazy"></button>' % (k, E(purl(u, 160))) for k, u in enumerate(g0)) if len(g0) > 1 else ""
     galjson = json.dumps(gal).replace("</", "<\\/")
     main_html = pimg(g0[0], alt, 900) if g0 else ""
+    refnote = '<p class="gnote">Fotos de referencia: el color de la unidad disponible en tienda puede variar.</p>' if any(x.get("ref") for x in m["psets"]) else ""
     gallery = (f'<div class="stage big" id="stage" data-cat="{m["cat"]}"><div class="artwrap"{" hidden" if g0 else ""}>{art.svg(m["cat"], hexof(first[0]))}</div>'
                f'<button class="pmain" id="pmain" aria-label="Ampliar foto"{"" if g0 else " hidden"}>{main_html}</button></div>'
                f'<div class="thumbs" id="thumbs">{thumbs}</div>'
                f'<p class="gnote" id="gnote"{" hidden" if g0 else ""}>Foto de este color próximamente. Imagen ilustrativa.</p>'
+               f'{refnote}'
                f'<script type="application/json" id="galdata">{galjson}</script>')
     related = [r for r in ms if r["cat"] == m["cat"] and r["slug"] != m["slug"]][:4] or [r for r in ms if r["slug"] != m["slug"]][:4]
     price = f'<span id="price">{money(first[2])}</span>' if first[2] else '<span id="price">Consultar precio</span>'

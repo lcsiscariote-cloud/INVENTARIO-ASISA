@@ -186,6 +186,19 @@
    ]
   }
  ],
+ "avanzada-2021-cuatrimoto-t-archon-4x4-400cc": [
+  {
+   "color": "rojo-negro",
+   "urls": [
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/avanzada-t-archon-400/rojo-negro/IMG-20261009-WA0009.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/avanzada-t-archon-400/rojo-negro/IMG-20261009-WA0010.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/avanzada-t-archon-400/rojo-negro/IMG-20261009-WA0012.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/avanzada-t-archon-400/rojo-negro/IMG-20261009-WA0014.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/avanzada-t-archon-400/rojo-negro/IMG-20261009-WA0016.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/avanzada-t-archon-400/rojo-negro/IMG-20261009-WA0029.jpg"
+   ]
+  }
+ ],
  "avanzada-utv-alfa": [
   {
    "color": "rojo",
@@ -195,6 +208,18 @@
     "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/avanzada-utv-alfa/rojo/IMG-20260930-WA0024.jpg",
     "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/avanzada-utv-alfa/rojo/IMG-20260930-WA0025.jpg"
    ]
+  }
+ ],
+ "dazon-dz200q1": [
+  {
+   "color": "",
+   "urls": [
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/dazon-200/negro/IMG-20261009-WA0018.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/dazon-200/negro/IMG-20261009-WA0020.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/dazon-200/negro/IMG-20261009-WA0022.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/dazon-200/negro/IMG-20261009-WA0024.jpg"
+   ],
+   "ref": true
   }
  ],
  "lifan-lifan-110cc-tp": [
@@ -241,6 +266,18 @@
    ]
   }
  ],
+ "piaggio-ape-dx400": [
+  {
+   "color": "",
+   "urls": [
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/piaggio-ape-dx400/rojo/IMG-20261009-WA0013.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/piaggio-ape-dx400/rojo/IMG-20261009-WA0015.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/piaggio-ape-dx400/rojo/IMG-20261009-WA0019.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/piaggio-ape-dx400/rojo/IMG-20261009-WA0023.jpg"
+   ],
+   "ref": true
+  }
+ ],
  "tank-tk150-7-hurricane-150-cc": [
   {
    "color": "rojo",
@@ -271,6 +308,17 @@
     "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/treck-pocket/negro-rojo/IMG-20261002-WA0006.jpg",
     "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/treck-pocket/negro-rojo/IMG-20261002-WA0007.jpg",
     "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/treck-pocket/negro-rojo/IMG-20261002-WA0008.jpg"
+   ]
+  }
+ ],
+ "treck-rampante-250": [
+  {
+   "color": "rojo",
+   "urls": [
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/treck-rampante-250/rojo/IMG-20261009-WA0007.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/treck-rampante-250/rojo/IMG-20261009-WA0008.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/treck-rampante-250/rojo/IMG-20261009-WA0021.jpg",
+    "https://ik.imagekit.io/szxayxbmb/asisa-motos/modelos/treck-rampante-250/rojo/IMG-20261009-WA0027.jpg"
    ]
   }
  ],
